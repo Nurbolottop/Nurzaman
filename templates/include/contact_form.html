@@ -1,0 +1,20 @@
+<section id="section6" class="form">
+    <form method = "POST" class="formSection">
+      {% csrf_token %}
+      {{contactinfo.title|safe}}
+      <input placeholder="Введите имя" name = "name" class="Forminput" type="text" />
+      <input placeholder="Введите почту" name = "email"  class="Forminput" type="email" />
+      <input placeholder="Введите номер" name = "number"  class="Forminput" type="text" />
+      <div class="checkbox">
+        <input type="checkbox" name="consent"  id="agreementFeedback" />
+        <label for="agreementFeedback">
+          Я даю согласие на обработку моих персональных данных<br />
+          согласно политике конфиденциальности
+        </label>
+      </div>
+      <button name = "call1" class="formButton">Заказать звонок</button>
+    </form>
+    <div class="formImager">
+      <img src="{{contactinfo.image.url}}" alt="" />
+    </div>
+  </section>
