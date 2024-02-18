@@ -554,12 +554,14 @@
     
                     <div style="display: flex">
                       <div class="shools">
+                        
                       {% for environment in environment.environment_test.all%}
                         <div>
                           <h1>{{environment.title}}</h1>
-                          <ul>
+                          <p><u
+                            style="color: #B37D68; font-size: 15px; padding-right:3px ;">●</u>
                             {{environment.subtitle}}
-                          </ul>
+                          </p>
                         </div>
                       {% endfor %}
                       </div>
@@ -586,6 +588,10 @@
                       fill="#858585" />
                   </svg>
                 </div>
+                <div class="mobileNoneDiv">
+                  <h1 class="swiper-pagination6"></h1>
+                </div>
+      
                 <div class="swiper-button-next6">
                   <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="19" cy="19" r="19" transform="matrix(-1 0 0 1 38 0.989014)" fill="#EAEAEA" />
@@ -617,7 +623,7 @@
   </section>
   <section>
     <div class="betwenHead">
-      <div>
+      <div style="color:#b37d68 !important">
         {{street.title|safe}}
       </div>
       <div>
