@@ -1,0 +1,366 @@
+{% load static %}
+<footer class="footer block1024">
+  <div class="wrap640"  style="display: flex; justify-content: space-between">
+    <div class="leftFooter">
+      <img src="{% static 'assets/svg/Mask group.svg' %}" alt="" />
+    </div>
+    <a href="{{settings.whatsapp}}">
+      <div class="writeUs">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="21"
+          height="22"
+          viewBox="0 0 21 22"
+          fill="none"
+        >
+          <path
+            d="M0.448262 10.4554C0.44777 12.2336 0.912394 13.9699 1.79587 15.5002L0.36377 20.7291L5.71483 19.326C7.19486 20.1317 8.85313 20.5539 10.5383 20.554H10.5427C16.1056 20.554 20.634 16.0273 20.6364 10.4634C20.6375 7.76724 19.5884 5.23198 17.6825 3.32459C15.7769 1.41737 13.2426 0.366465 10.5423 0.365234C4.97868 0.365234 0.450641 4.89172 0.448344 10.4554"
+            fill="url(#paint0_linear_26_565)"
+          />
+          <path
+            d="M0.0877734 10.4521C0.0871992 12.2943 0.568476 14.0926 1.48345 15.6778L0 21.0941L5.54293 19.6407C7.07019 20.4734 8.78973 20.9125 10.5395 20.9131H10.544C16.3065 20.9131 20.9975 16.2236 21 10.4605C21.001 7.66746 19.9142 5.04107 17.9402 3.06534C15.966 1.08987 13.341 0.00114844 10.544 0C4.78045 0 0.0900703 4.68891 0.0877734 10.4521ZM3.38871 15.4048L3.18175 15.0763C2.31172 13.6929 1.85251 12.0943 1.85317 10.4528C1.85505 5.66254 5.75351 1.76531 10.5473 1.76531C12.8687 1.7663 15.0504 2.67127 16.6914 4.3132C18.3323 5.9553 19.2352 8.13816 19.2346 10.4598C19.2325 15.25 15.3339 19.1477 10.544 19.1477H10.5405C8.98086 19.1469 7.45123 18.7281 6.11723 17.9365L5.79977 17.7483L2.51048 18.6107L3.38871 15.4047V15.4048Z"
+            fill="url(#paint1_linear_26_565)"
+          />
+          <path
+            d="M7.93048 6.0825C7.73476 5.64749 7.52878 5.63871 7.34265 5.63108C7.19023 5.62452 7.016 5.62501 6.84193 5.62501C6.66769 5.62501 6.3846 5.69055 6.14532 5.95182C5.90579 6.21334 5.23083 6.84531 5.23083 8.13065C5.23083 9.41608 6.16706 10.6583 6.29757 10.8328C6.42825 11.0069 8.10496 13.729 10.7605 14.7762C12.9674 15.6465 13.4166 15.4734 13.8955 15.4298C14.3746 15.3863 15.4413 14.798 15.659 14.1879C15.8768 13.5779 15.8768 13.0551 15.8115 12.9458C15.7462 12.8369 15.5719 12.7716 15.3107 12.641C15.0493 12.5103 13.7649 11.8783 13.5254 11.7911C13.2859 11.7039 13.1117 11.6605 12.9375 11.9221C12.7633 12.1832 12.263 12.7716 12.1105 12.9458C11.9581 13.1205 11.8056 13.1422 11.5445 13.0115C11.283 12.8804 10.4416 12.6049 9.44339 11.7149C8.66671 11.0224 8.14237 10.1672 7.98996 9.90564C7.83754 9.64446 7.97363 9.50287 8.10464 9.37269C8.22202 9.25563 8.36599 9.06761 8.49675 8.91512C8.62701 8.76254 8.67049 8.65368 8.7576 8.47945C8.8448 8.30505 8.80116 8.15247 8.73595 8.0218C8.67049 7.89112 8.1628 6.59905 7.93048 6.0825Z"
+            fill="white"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_26_565"
+              x1="1014"
+              y1="2036.75"
+              x2="1014"
+              y2="0.365234"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#1FAF38" />
+              <stop offset="1" stop-color="#60D669" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_26_565"
+              x1="1050"
+              y1="2109.41"
+              x2="1050"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#F9F9F9" />
+              <stop offset="1" stop-color="white" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <p>
+          {{settings.whatsapp_number}}
+          <br />
+          <u> Написать нам</u>
+        </p>
+      </div>
+    </a>
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="wrap640"  style="display: flex; justify-content: space-between">
+    <div class="footerCenter">
+      <div>
+        <h1>Адрес</h1>
+        <p>{{settings.location}}</p>
+        <p>{{settings.email}}</p>
+        {% for settings in settings.phone_title.all%}
+        <p>{{settings.phone}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="footerCenter">
+      <div>
+        <h1>Офис продаж:</h1>
+        {% for settings in settings.office_title.all%}
+        <p>{{settings.location}}</p>
+        <p>{{settings.phone}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="footerCenter">
+      <div>
+        <h1>Подписаться</h1>
+        {% for settings in settings.settings_soc.all %}
+        <a href="{{settings.url}}">
+          <p>{{settings.title}} - {{settings.username}}</p>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="mobileNoneDiv" style="opacity: 0">
+        <h1>Офис продаж:</h1>
+        <p>г. Ош ул. Аскара Шакирова 275</p>
+        <p>Пн. - Сб. c 09:00 до 18:00</p>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="wrap640" style="display: flex; justify-content: space-between">
+    <form method="POST">
+      {% csrf_token%}
+
+      <input
+        placeholder="Введите имя"
+        name="name2"
+        class="Forminputt"
+        type="text"
+      />
+      <input
+        placeholder="Введите почту"
+        name="email2"
+        class="Forminputt"
+        type="email"
+      />
+      <input
+        placeholder="Введите номер"
+        name="number2"
+        class="Forminputt"
+        type="text"
+      />
+      <div class="checkboxx">
+        <input type="checkbox" name="consent2" />
+        <p>Я согласен на обработку Персональных данных</p>
+      </div>
+      <button name="call2" class="footerButton">Отправить</button>
+    </form>
+    <div style="justify-content: end;" class="footerRight">
+      <div style="display: flex; gap:10px;    align-items: center;" class="sosial">
+        {% if settings.whatsapp_number%}
+        <img
+          onclick="callPhoneNumber('{{settings.phone}}')"
+          src="{% static 'assets/img/Group 4.svg' %}"
+          alt=""
+        />
+        {% endif %} {% if settings.whatsapp%}
+        <a href="{{settings.whatsapp}}">
+          <img src="{% static 'assets/img/Group 6.svg' %}" alt="" />
+        </a>
+        {% endif %} {% if settings.instagram%}
+        <a href="settings.instagram">
+          <img src="{% static 'assets/img/Group 5.svg' %}" alt="" />
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>
+<footer class="footer none1024">
+  <form method="POST">
+    {% csrf_token%}
+    <div class="leftFooter">
+      <img src="{% static 'assets/svg/Mask group.svg' %}" alt="" />
+    </div>
+    <input
+      placeholder="Введите имя"
+      name="name2"
+      class="Forminputt"
+      type="text"
+    />
+    <input
+      placeholder="Введите почту"
+      name="email2"
+      class="Forminputt"
+      type="email"
+    />
+    <input
+      placeholder="Введите номер"
+      name="number2"
+      class="Forminputt"
+      type="text"
+    />
+    <div class="checkboxx">
+      <input type="checkbox" name="consent2" />
+      <p>Я согласен на обработку Персональных данных</p>
+    </div>
+    <button name="call2" class="footerButton">Отправить</button>
+  </form>
+
+  <div class="footerCenter">
+    <div>
+      <h1>Адрес</h1>
+      <p>{{settings.location}}</p>
+      <p>{{settings.email}}</p>
+      {% for settings in settings.phone_title.all%}
+      <p>{{settings.phone}}</p>
+      {% endfor %}
+    </div>
+    <div>
+      <h1>Офис продаж:</h1>
+      {% for settings in settings.office_title.all%}
+      <p>{{settings.location}}</p>
+      <p>{{settings.phone}}</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="footerCenter">
+    <div>
+      <h1>Подписаться</h1>
+      {% for settings in settings.settings_soc.all %}
+      <a href="{{settings.url}}">
+        <p>{{settings.title}} - {{settings.username}}</p>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="mobileNoneDiv" style="opacity: 0">
+      <h1>Офис продаж:</h1>
+      <p>г. Ош ул. Аскара Шакирова 275</p>
+      <p>Пн. - Сб. c 09:00 до 18:00</p>
+    </div>
+  </div>
+  <div class="footerRight">
+    <a href="{{settings.whatsapp}}">
+      <div class="writeUs">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="21"
+          height="22"
+          viewBox="0 0 21 22"
+          fill="none"
+        >
+          <path
+            d="M0.448262 10.4554C0.44777 12.2336 0.912394 13.9699 1.79587 15.5002L0.36377 20.7291L5.71483 19.326C7.19486 20.1317 8.85313 20.5539 10.5383 20.554H10.5427C16.1056 20.554 20.634 16.0273 20.6364 10.4634C20.6375 7.76724 19.5884 5.23198 17.6825 3.32459C15.7769 1.41737 13.2426 0.366465 10.5423 0.365234C4.97868 0.365234 0.450641 4.89172 0.448344 10.4554"
+            fill="url(#paint0_linear_26_565)"
+          />
+          <path
+            d="M0.0877734 10.4521C0.0871992 12.2943 0.568476 14.0926 1.48345 15.6778L0 21.0941L5.54293 19.6407C7.07019 20.4734 8.78973 20.9125 10.5395 20.9131H10.544C16.3065 20.9131 20.9975 16.2236 21 10.4605C21.001 7.66746 19.9142 5.04107 17.9402 3.06534C15.966 1.08987 13.341 0.00114844 10.544 0C4.78045 0 0.0900703 4.68891 0.0877734 10.4521ZM3.38871 15.4048L3.18175 15.0763C2.31172 13.6929 1.85251 12.0943 1.85317 10.4528C1.85505 5.66254 5.75351 1.76531 10.5473 1.76531C12.8687 1.7663 15.0504 2.67127 16.6914 4.3132C18.3323 5.9553 19.2352 8.13816 19.2346 10.4598C19.2325 15.25 15.3339 19.1477 10.544 19.1477H10.5405C8.98086 19.1469 7.45123 18.7281 6.11723 17.9365L5.79977 17.7483L2.51048 18.6107L3.38871 15.4047V15.4048Z"
+            fill="url(#paint1_linear_26_565)"
+          />
+          <path
+            d="M7.93048 6.0825C7.73476 5.64749 7.52878 5.63871 7.34265 5.63108C7.19023 5.62452 7.016 5.62501 6.84193 5.62501C6.66769 5.62501 6.3846 5.69055 6.14532 5.95182C5.90579 6.21334 5.23083 6.84531 5.23083 8.13065C5.23083 9.41608 6.16706 10.6583 6.29757 10.8328C6.42825 11.0069 8.10496 13.729 10.7605 14.7762C12.9674 15.6465 13.4166 15.4734 13.8955 15.4298C14.3746 15.3863 15.4413 14.798 15.659 14.1879C15.8768 13.5779 15.8768 13.0551 15.8115 12.9458C15.7462 12.8369 15.5719 12.7716 15.3107 12.641C15.0493 12.5103 13.7649 11.8783 13.5254 11.7911C13.2859 11.7039 13.1117 11.6605 12.9375 11.9221C12.7633 12.1832 12.263 12.7716 12.1105 12.9458C11.9581 13.1205 11.8056 13.1422 11.5445 13.0115C11.283 12.8804 10.4416 12.6049 9.44339 11.7149C8.66671 11.0224 8.14237 10.1672 7.98996 9.90564C7.83754 9.64446 7.97363 9.50287 8.10464 9.37269C8.22202 9.25563 8.36599 9.06761 8.49675 8.91512C8.62701 8.76254 8.67049 8.65368 8.7576 8.47945C8.8448 8.30505 8.80116 8.15247 8.73595 8.0218C8.67049 7.89112 8.1628 6.59905 7.93048 6.0825Z"
+            fill="white"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_26_565"
+              x1="1014"
+              y1="2036.75"
+              x2="1014"
+              y2="0.365234"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#1FAF38" />
+              <stop offset="1" stop-color="#60D669" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_26_565"
+              x1="1050"
+              y1="2109.41"
+              x2="1050"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#F9F9F9" />
+              <stop offset="1" stop-color="white" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <p>
+          {{settings.whatsapp_number}}
+          <br />
+          <u> Написать нам</u>
+        </p>
+      </div>
+    </a>
+    <div class="sosial">
+      {% if settings.whatsapp_number%}
+      <img
+        onclick="callPhoneNumber('{{settings.phone}}')"
+        src="{% static 'assets/img/Group 4.svg' %}"
+        alt=""
+      />
+      {% endif %} {% if settings.whatsapp%}
+      <a href="{{settings.whatsapp}}">
+        <img src="{% static 'assets/img/Group 6.svg' %}" alt="" />
+      </a>
+      {% endif %} {% if settings.instagram%}
+      <a href="settings.instagram">
+        <img src="{% static 'assets/img/Group 5.svg' %}" alt="" />
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+<footer class="footer" style="flex-direction: column">
+  <div class="line mobileNoneDiv"></div>
+  <div class="underFoot">
+    <div class="writeUs">
+      <p>
+        <u>© Nurzaman 2023 Информация на сайте не является публичной офертой</u>
+      </p>
+    </div>
+    <div class="writeUs">
+      <p><u>Политика конфиденциальности</u></p>
+      <p>
+        <u
+          >Разработка
+          <a href="https://instagram.com/codex_kg/" style="color: white"
+            >Codex KG</a
+          ></u
+        >
+      </p>
+    </div>
+  </div>
+</footer>
+<div style="display: none" id="callModal">
+  <div class="modalContainer"></div>
+  <div class="modal1">
+    <div class="madalHead">
+      <h1>Заказать звонок</h1>
+      <svg
+        id="callModalClose"
+        style="cursor: pointer"
+        xmlns="http://www.w3.org/2000/svg"
+        width="29"
+        height="29"
+        viewBox="0 0 29 29"
+        fill="none"
+      >
+        <line
+          x1="7.07234"
+          y1="7.07024"
+          x2="21.2145"
+          y2="21.2124"
+          stroke="#909090"
+          stroke-width="2"
+        />
+        <line
+          x1="21.213"
+          y1="7.07039"
+          x2="7.07083"
+          y2="21.2125"
+          stroke="#909090"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <br /><br />
+
+    <form class="modalForm">
+      <input class="modalInput" type="text" placeholder="Ваше имя" />
+
+      <input class="modalInput" type="text" placeholder="Ваш номер телефона" />
+      <textarea
+        placeholder="Комментарий"
+        name=""
+        id=""
+        cols="30"
+        rows="4"
+      ></textarea>
+
+      <br />
+      <div>
+        <input type="checkbox" name="" id="call" />
+        <label for="call" style="cursor: pointer"
+          >Я согласен с политикой конфиденциальности</label
+        >
+      </div>
+      <br /><br />
+      <button>Отправить</button>
+    </form>
+  </div>
+</div>

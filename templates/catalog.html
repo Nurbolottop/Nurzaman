@@ -1,0 +1,434 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/styles/swiperStyle.css' %}" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Nurzaman</title>
+  </head>
+
+  <body>
+    <div class="preloader">
+      <div class="preLoaderCenter">
+        <div class="logo">
+          <img src="{% static 'assets/svg/Mask group.svg' %}" alt="" />
+          <br />
+          <div class="progress-bar">
+            <div id="loadProgress" class="loadProgress"></div>
+          </div>
+
+          <p id="valueBlock" class="progress-text">0%</p>
+        </div>
+      </div>
+    </div>
+    <section class="menu" id="menu">
+      <div id="closeMenu" class="menuHead">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M13 1L1 13" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 1L13 13" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Закрыть
+      </div>
+      <div>
+        {% include 'include/header.html' %}
+
+      </div>
+      <div>
+        <div class="social">
+          <a href="tel:+996553 77 77 44"><svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="30" r="29.5" stroke="#B37D68" />
+              <path d="M32.3525 20.75C36.0535 21.161 38.9775 24.081 39.3935 27.782" stroke="#B37D68" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M32.3525 24.293C34.1235 24.637 35.5075 26.022 35.8525 27.793" stroke="#B37D68" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M25.7005 34.299C18.8025 27.4002 19.7834 24.2412 20.5105 23.2232C20.604 23.0586 22.9065 19.6119 25.3746 21.6341C31.5008 26.6795 23.7451 25.9661 28.8894 31.1113C34.0348 36.2554 33.3203 28.5 38.3659 34.6249C40.3882 37.094 36.9413 39.3964 36.7778 39.4888C35.7598 40.217 32.5995 41.1978 25.7005 34.299Z"
+                stroke="#B37D68" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=996778777744&text&type=phone_number&app_absent=0">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="30" r="29.5" stroke="#B37D68" />
+              <path
+                d="M37.0732 22.9167C35.1916 21.0417 32.6829 20 30.0348 20C24.5296 20 20.0697 24.4444 20.0697 29.9306C20.0697 31.6667 20.5575 33.4028 21.3937 34.8611L20 40L25.2962 38.6111C26.7596 39.375 28.3624 39.7917 30.0348 39.7917C35.5401 39.7917 40 35.3472 40 29.8611C39.9303 27.2917 38.9547 24.7917 37.0732 22.9167ZM34.8432 33.4722C34.6341 34.0278 33.6585 34.5833 33.1707 34.6528C32.7526 34.7222 32.1951 34.7222 31.6376 34.5833C31.2892 34.4444 30.8014 34.3056 30.2439 34.0278C27.7352 32.9861 26.1324 30.4861 25.993 30.2778C25.8537 30.1389 24.9477 28.9583 24.9477 27.7083C24.9477 26.4583 25.5749 25.9028 25.784 25.625C25.993 25.3472 26.2718 25.3472 26.4808 25.3472C26.6202 25.3472 26.8293 25.3472 26.9686 25.3472C27.108 25.3472 27.3171 25.2778 27.5261 25.7639C27.7352 26.25 28.223 27.5 28.2927 27.5694C28.3624 27.7083 28.3624 27.8472 28.2927 27.9861C28.223 28.125 28.1533 28.2639 28.0139 28.4028C27.8746 28.5417 27.7352 28.75 27.6655 28.8194C27.5261 28.9583 27.3868 29.0972 27.5261 29.3056C27.6655 29.5833 28.1533 30.3472 28.9199 31.0417C29.8955 31.875 30.662 32.1528 30.9408 32.2917C31.2195 32.4306 31.3589 32.3611 31.4983 32.2222C31.6376 32.0833 32.1254 31.5278 32.2648 31.25C32.4042 30.9722 32.6132 31.0417 32.8223 31.1111C33.0314 31.1806 34.2857 31.8056 34.4948 31.9444C34.7735 32.0833 34.9129 32.1528 34.9826 32.2222C35.0523 32.4306 35.0523 32.9167 34.8432 33.4722Z"
+                fill="#B37D68" />
+            </svg>
+          </a>
+  
+          <a href="https://www.instagram.com/nurzaman_osh/">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Group 5">
+                <circle id="Ellipse 5" cx="30" cy="30" r="29.5" stroke="#B37D68" />
+                <g id="instagram">
+                  <path
+                    d="M30 21.8072C32.6506 21.8072 33.0121 21.8072 34.0964 21.8072C35.0602 21.8072 35.5422 22.0482 35.9036 22.1687C36.3855 22.4096 36.747 22.5301 37.1084 22.8916C37.4699 23.253 37.7108 23.6145 37.8313 24.0964C37.9518 24.4578 38.0723 24.9398 38.1928 25.9036C38.1928 26.988 38.1928 27.2289 38.1928 30C38.1928 32.7711 38.1928 33.0121 38.1928 34.0964C38.1928 35.0602 37.9518 35.5422 37.8313 35.9036C37.5904 36.3855 37.4699 36.747 37.1084 37.1084C36.747 37.4699 36.3855 37.7108 35.9036 37.8313C35.5422 37.9518 35.0602 38.0723 34.0964 38.1928C33.0121 38.1928 32.7711 38.1928 30 38.1928C27.2289 38.1928 26.988 38.1928 25.9036 38.1928C24.9398 38.1928 24.4578 37.9518 24.0964 37.8313C23.6145 37.5904 23.253 37.4699 22.8916 37.1084C22.5301 36.747 22.2892 36.3855 22.1687 35.9036C22.0482 35.5422 21.9277 35.0602 21.8072 34.0964C21.8072 33.0121 21.8072 32.7711 21.8072 30C21.8072 27.2289 21.8072 26.988 21.8072 25.9036C21.8072 24.9398 22.0482 24.4578 22.1687 24.0964C22.4096 23.6145 22.5301 23.253 22.8916 22.8916C23.253 22.5301 23.6145 22.2892 24.0964 22.1687C24.4578 22.0482 24.9398 21.9277 25.9036 21.8072C26.988 21.8072 27.3494 21.8072 30 21.8072ZM30 20C27.2289 20 26.988 20 25.9036 20C24.8193 20 24.0964 20.241 23.494 20.4819C22.8916 20.7229 22.2892 21.0843 21.6867 21.6867C21.0843 22.2892 20.8434 22.7711 20.4819 23.494C20.241 24.0964 20.1205 24.8193 20 25.9036C20 26.988 20 27.3494 20 30C20 32.7711 20 33.0121 20 34.0964C20 35.1807 20.241 35.9036 20.4819 36.506C20.7229 37.1084 21.0843 37.7108 21.6867 38.3133C22.2892 38.9157 22.7711 39.1566 23.494 39.5181C24.0964 39.759 24.8193 39.8795 25.9036 40C26.988 40 27.3494 40 30 40C32.6506 40 33.0121 40 34.0964 40C35.1807 40 35.9036 39.759 36.506 39.5181C37.1084 39.2771 37.7108 38.9157 38.3133 38.3133C38.9157 37.7108 39.1566 37.2289 39.5181 36.506C39.759 35.9036 39.8795 35.1807 40 34.0964C40 33.0121 40 32.6506 40 30C40 27.3494 40 26.988 40 25.9036C40 24.8193 39.759 24.0964 39.5181 23.494C39.2771 22.8916 38.9157 22.2892 38.3133 21.6867C37.7108 21.0843 37.2289 20.8434 36.506 20.4819C35.9036 20.241 35.1807 20.1205 34.0964 20C33.0121 20 32.7711 20 30 20Z"
+                    fill="#B37D68" />
+                  <path
+                    d="M30 24.8193C27.1084 24.8193 24.8193 27.1084 24.8193 30C24.8193 32.8916 27.1084 35.1807 30 35.1807C32.8916 35.1807 35.1807 32.8916 35.1807 30C35.1807 27.1084 32.8916 24.8193 30 24.8193ZM30 33.3735C28.1928 33.3735 26.6265 31.9277 26.6265 30C26.6265 28.1928 28.0723 26.6265 30 26.6265C31.8072 26.6265 33.3735 28.0723 33.3735 30C33.3735 31.8072 31.8072 33.3735 30 33.3735Z"
+                    fill="#B37D68" />
+                  <path
+                    d="M35.3012 25.9036C35.9666 25.9036 36.506 25.3642 36.506 24.6988C36.506 24.0334 35.9666 23.494 35.3012 23.494C34.6358 23.494 34.0964 24.0334 34.0964 24.6988C34.0964 25.3642 34.6358 25.9036 35.3012 25.9036Z"
+                    fill="#B37D68" />
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <header class="header" style="height: fit-content">
+      <nav class="nav" style="background-color: white">
+        <div class="burger" id="menuButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+            <path d="M1 1H15" stroke="black" stroke-linecap="round" />
+            <path d="M1 6H15" stroke="black" stroke-linecap="round" />
+            <path d="M1 11H15" stroke="black" stroke-linecap="round" />
+          </svg>
+          <p style="color: black">Меню</p>
+        </div>
+        <div class="logo">
+          <a href="{% url 'index' %}">
+            <img class="logo_img" src="{{settings.logo_complex.url}}" alt="" />
+          </a>
+        </div>
+        <div class="mobileNone" style="width: 100px"></div>
+      </nav>
+      <br />
+
+      <div>
+        {% comment %} <div class="socialMedia">
+          <img src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
+          <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
+        </div> {% endcomment %}
+        <div class="socialMedia">
+          <img class="modals" data-modal="callModal" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
+          <a href="https://api.whatsapp.com/send/?phone=996778777744&text&type=phone_number&app_absent=0">
+            <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <br />
+    <br /><br />
+    <main class="main" style="padding: 0 27px">
+      <br />
+      <h1>КВАРТИРЫ</h1>
+      <br /><br /><br /><br />
+      <div class="sliderLink" style="margin-top: 30px;">
+        <a href="{% url 'genplaning' %}">
+          <div class="navSlideLink" style="padding: 1rem">На генплане</div>
+        </a>
+
+        <div class="navSlideLink activee" style="padding: 1rem">По параметрам</div>
+      </div>
+      <br /><br />
+      <div class="filterList">
+        {% comment %} <div class="filterItem filterItemActive">Все квартиры</div>
+        <div style="border: 1px solid #b37d68" class="filterItem">Выгодное предложение</div> {% endcomment %}
+        <a href="{% url 'catalog' %}" class="filterItem">Все квартиры</a>
+        {% for category in categories %}
+        <a href="{% url 'catalog' %}?category={{ category.id }}" class="filterItem">{{ category.title }}</a>
+        {% endfor %}
+
+      </div>
+    </main>
+
+    <div class="filterZone" style="padding: 0 27px">
+      <div class="scrollBar" >
+        <div id="openFilter" class="moreFlatCard">
+          <p>Показать фильтр</p>
+        </div>
+        <div class="leftFilteredZone">
+          <h1>Фильтр по квартирам</h1>
+
+          <div class="sliderLink">
+            <div class="navSlideLink activee" style="width: 100%">По параметрам</div>
+          </div>
+          <div>
+            <h2>Количество комнат</h2>
+            {% for room in rooms %}
+              <a style='color:black' href="{% url 'catalog' %}?room={{ room.id }}" class="roomButton">{{ room.id }}</a>
+            {% endfor %}
+
+          </div>
+          <!-- Слайдер для стоимости -->
+          <div>
+            <h2>Стоимость, в сомах</h2>
+            <br /><br />
+            <div class="range-slider">
+              <input type="range" id="min_price" name="min_price" min="1" max="100000" value="1" class="range-slider__input" />
+              <input type="range" id="max_price" name="max_price" min="1" max="100000" value="100000" class="range-slider__input" />
+              <div id="price_display" class="range-slider__display">
+                 <span id="min_price_val"></span> <span id="max_price_val">100000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайдер для площади -->
+          <div>
+            <h2>Площадь, м2</h2>
+            <br /><br />
+            <div class="range-slider">
+              <input type="range" id="min_size" name="min_size" min="0" max="200" value="1" class="range-slider__input" />
+              <input type="range" id="max_size" name="max_size" min="0" max="200" value="200" class="range-slider__input" />
+              <div id="size_display" class="range-slider__display" >
+                 <span style='oposity:0' id="min_size_val">1</span> <span style='opacity: 0;display:none'id="max_size_val">200</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайдер для этажа -->
+          <div>
+            <h2>Этаж</h2>
+            <br /><br />
+            <div class="range-slider">
+              <input type="range" id="min_floor" name="min_floor" min="0" max="11" value="0" class="range-slider__input" />
+              <input type="range" id="max_floor" name="max_floor" min="0" max="11" value="11" class="range-slider__input" />
+              <div id="floor_display" class="range-slider__display">
+                 <span id="min_floor_val">0</span>  <span id="max_floor_val">11</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- <button id="checkboxListOpen" class="filtermoreBtn">
+                Дополнительные параметры
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
+                    <path
+                        d="M0.206748 0.206748C0.457352 -0.0438557 0.849506 -0.0666378 1.12585 0.138402L1.20502 0.206748L7.29412 6.29553L13.3832 0.206748C13.6338 -0.0438557 14.026 -0.0666378 14.3023 0.138402L14.3815 0.206748C14.6321 0.457352 14.6549 0.849506 14.4498 1.12585L14.3815 1.20502L7.79325 7.79325C7.54265 8.04386 7.15049 8.06664 6.87415 7.8616L6.79498 7.79325L0.206748 1.20502C-0.0689161 0.929352 -0.0689161 0.482412 0.206748 0.206748Z"
+                        fill="white" />
+                </svg>min_price
+            </button> -->
+            
+            <div class="select-box">
+              <div class="select-box__current" tabindex="1">
+                <div class="select-box__value">
+                  <input class="select-box__input" type="radio" id="0" value="0" name="Ben" checked="checked" />
+                  <p class="select-box__input-text">Дополнительные параметры</p>
+                </div>
+                <img
+                  class="select-box__icon"
+                  src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                  alt="Arrow Icon"
+                  aria-hidden="true"
+                />
+              </div>
+              <ul class="select-box__list">
+                {% for features in features %}
+                <li>
+                  <a href="{% url 'catalog' %}?ban={{ features.id }}" class="select-box__option" for="0" aria-hidden="aria-hidden">{{features.title}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          
+            
+
+          <div class="ahahha">Мы подобрали для вас квартир: {{apartment_count}}</div>
+          <div class="sbrosit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.751703 6.29395C0.559703 6.29395 0.367703 6.22095 0.221703 6.07395C-0.0712969 5.78095 -0.0712969 5.30695 0.221703 5.01395L5.0137 0.221947C5.3067 -0.0710527 5.7807 -0.0710527 6.0737 0.221947C6.3667 0.514947 6.3667 0.988947 6.0737 1.28195L1.2817 6.07395C1.1357 6.22095 0.943703 6.29395 0.751703 6.29395Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.54575 6.29675C5.35375 6.29675 5.16175 6.22375 5.01575 6.07675L0.21975 1.27975C-0.07325 0.98675 -0.07325 0.51275 0.21975 0.21975C0.51375 -0.07325 0.98775 -0.07325 1.27975 0.21975L6.07575 5.01675C6.36875 5.30975 6.36875 5.78375 6.07575 6.07675C5.92975 6.22375 5.73675 6.29675 5.54575 6.29675Z"
+                fill="black"
+              /></svg 
+            ><a href = {% url 'catalog' %} >Сбросить фильтры </a>
+          </div>
+        </div>
+      </div>
+      <div class="flatList">
+        {% for apartment in apartments %}
+        <a href="{% url 'planing' apartment.id %}">
+          <div class="flatListCard">
+            <div class="cardHead">
+              <h1>{{apartment.room}} квартира {{apartment.razmer}} м²</h1>
+              <p>{{apartment.info}}</p>
+            </div>
+            {% if apartment.status%}
+            <button class="flatMetka">{{apartment.status}}</button>
+            {% endif %}
+            <br />
+            <div class="cardFlatImage">
+              <img src="{{apartment.layote.url}}" style="max-width:350px;" alt="" />
+            </div>
+            <br />
+            <div class="cardFlatInf">
+              <p>Этаж:</p>
+              <h2>{{apartment.floor}} </h2>
+            </div>
+            <div class="cardFlatInf">
+              <p>Стоимость:</p>
+              <h1>{{apartment.price}} с</h1>
+            </div>
+            <br />
+            <div class="cardFootFlat">
+              <div>
+                <h1>Стандартный платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle.svg' %}" alt="" /></h1>
+                <h1>Ваш платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle — копия.svg' %}" alt="" /></h1>
+              </div>
+              <div>
+                <h2>от 80 453 с/мес.</h2>
+                <h3>от 54 535 с/мес.</h3>
+              </div>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% if apartments.has_next %}
+        <div class="moreFlatCard">
+            <a href="?page={{ apartments.next_page_number }}">Посмотреть еще квартиры</a>
+        </div>
+    {% endif %}
+
+    <br /><br />
+    <div class="h100"></div>
+    {% include 'include/contact_form.html'%}
+
+    <br /><br /><br /><br />
+    <div class="h100"></div>
+    {% include "include/footer.html" %}
+
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <!-- Остальной HTML -->
+    <script>
+      // Функция для получения значения CSRF-токена из cookies
+      function getCSRFToken() {
+          const name = 'csrftoken';
+          let cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              const cookies = document.cookie.split(';');
+              for (let i = 0; i < cookies.length; i++) {
+                  const cookie = cookies[i].trim();
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+  
+      // Функция для обновления отображаемых значений слайдеров
+      function updateSliderDisplay() {
+          document.getElementById('min_price_val').textContent = document.getElementById('min_price').value;
+          document.getElementById('max_price_val').textContent = document.getElementById('max_price').value;
+          document.getElementById('min_size_val').textContent = document.getElementById('min_size').value;
+          document.getElementById('max_size_val').textContent = document.getElementById('max_size').value;
+          document.getElementById('min_floor_val').textContent = document.getElementById('min_floor').value;
+          document.getElementById('max_floor_val').textContent = document.getElementById('max_floor').value;
+      }
+  
+      // Функция для обновления списка квартир на странице
+      function updateApartmentList(apartmentsData) {
+        const flatList = document.querySelector('.flatList');
+        flatList.innerHTML = ''; // Очистить текущий список
+    
+        apartmentsData.forEach(apartment => {
+            const apartmentElement = `
+                <a href="/planing/${apartment.id}">
+                    <div class="flatListCard">
+                        <div class="cardHead">
+                            <h1>${apartment.room__title} квартира ${apartment.razmer} м²</h1>
+                            <p>${apartment.info || ''}</p>
+                        </div>
+                        ${apartment.status__title ? `<button class="flatMetka">${apartment.status__title}</button>` : ''}
+                        <br />
+                        <div class="cardFlatImage">
+                            <img src="${apartment.layote_url || ''}" style="max-width:350px;" alt="" />
+                        </div>
+                        <br />
+                        <div class="cardFlatInf">
+                            <p>Этаж:</p>
+                            <h2>${apartment.floor__title || ''} из</h2>
+                        </div>
+                        <div class="cardFlatInf">
+                            <p>Стоимость:</p>
+                            <h1>${apartment.price} с</h1>
+                        </div>
+                        <br />
+                        <div class="cardFootFlat">
+                            <div>
+                                <h1>Стандартный платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle.svg' %}" alt="" /></h1>
+                                <h1>Ваш платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle — копия.svg' %}" alt="" /></h1>
+                            </div>
+                            <div>
+                                <h2>от 80 453 с/мес.</h2>
+                                <h3>от 54 535 с/мес.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+            flatList.insertAdjacentHTML('beforeend', apartmentElement);
+          });
+      }
+      
+  
+      // Функция для отправки AJAX-запроса
+      function sendFilterRequest() {
+          const csrftoken = getCSRFToken(); // Получение CSRF-токена
+          const minPrice = document.getElementById('min_price').value;
+          const maxPrice = document.getElementById('max_price').value;
+          const minSize = document.getElementById('min_size').value;
+          const maxSize = document.getElementById('max_size').value;
+          const minFloor = document.getElementById('min_floor').value;
+          const maxFloor = document.getElementById('max_floor').value;
+          
+          // Отправка AJAX-запроса на сервер
+          $.ajax({
+              url: '/catalog/', // URL, который обрабатывает ваш запрос на стороне сервера
+              type: 'GET', 
+              data: {
+                  'min_price': minPrice,
+                  'max_price': maxPrice,
+                  'min_size': minSize,
+                  'max_size': maxSize,
+                  'min_floor': minFloor,
+                  'max_floor': maxFloor
+              },
+              success: function (response) {
+                  // Обновление списка квартир на странице
+                  $('.ahahha').text('Мы подобрали для вас квартир: ' + response.apartment_count);
+                  updateApartmentList(response.results);
+              },
+              error: function (xhr, status, error) {
+                  console.error('AJAX Error:', error);
+              }
+          });
+      }
+  
+      // Обработчики событий для слайдеров
+      document.addEventListener('DOMContentLoaded', function() {
+          let sliders = document.querySelectorAll('.range-slider__input');
+          sliders.forEach(function(input) {
+              input.addEventListener('input', function() {
+                  updateSliderDisplay();
+                  sendFilterRequest();
+              });
+          });
+          updateSliderDisplay(); // Первоначальное обновление значений слайдеров
+      });
+    </script>
+    
+      
+  </body>
+  
+  </body>
+</html>
