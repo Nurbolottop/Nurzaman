@@ -102,9 +102,15 @@
       <br />
 
       <div>
-        <div class="socialMedia">
+        {% comment %} <div class="socialMedia">
           <img src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
           <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
+        </div> {% endcomment %}
+        <div class="socialMedia">
+          <img class="modals" data-modal="callModal" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
+          <a href="https://api.whatsapp.com/send/?phone=996778777744&text&type=phone_number&app_absent=0">
+            <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
+          </a>
         </div>
       </div>
     </header>
@@ -147,7 +153,7 @@
           <div>
             <h2>Количество комнат</h2>
             {% for room in rooms %}
-              <a href="{% url 'catalog' %}?room={{ room.id }}" class="roomButton">{{ room.id }}</a>
+              <a style='color:black' href="{% url 'catalog' %}?room={{ room.id }}" class="roomButton">{{ room.id }}</a>
             {% endfor %}
 
           </div>

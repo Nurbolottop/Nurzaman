@@ -429,10 +429,12 @@
               <div class="backDrop"></div>
             </div>
             <div class="galaryNavigation" style="flex-direction: column; align-items: start">
-              <h1>{{advantages.title}}</h1>
+              <h1 id="clampText" class="clamp">{{advantages.title}}</h1>
+              <div onclick="hello()" id="clampText" class="clamp">
               <p>
-                {{advantages.info|safe}}
+                {{advantages.info|safe}} 
               </p>
+            </div>
             </div>
           </div>
         {% endfor %}
@@ -460,7 +462,6 @@
       </div>
     </div>
   </section>
-
   <section>
     <div class="prideHead">
       <h1 class="ohoho" style="width: 100%">
@@ -635,6 +636,7 @@
   <br /><br /><br />
   <div class="h100"></div>
   {% include "include/footer.html" %}
+
   <script src="{% static 'assets/js/fancybox.umd.js' %}"></script>
   <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>

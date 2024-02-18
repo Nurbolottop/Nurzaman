@@ -100,7 +100,7 @@ var swiperOptions = {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    640:{ 
+    640: {
       slidesPerView: 3,
       spaceBetween: 40,
     },
@@ -452,7 +452,7 @@ if (modalsOpenButtons.length) {
       navbar.style.zIndex = 1;
       document.body.style.overflow = 'hidden';
     };
-console.log(closeModalId, modalsOpenButtons)
+    console.log(closeModalId, modalsOpenButtons)
     closeModalId.addEventListener('click', onClose);
     currentModal.children[0].addEventListener('click', onClose);
     el.onclick = onOpenModal;
@@ -552,8 +552,28 @@ if (price && price.textContent.trim()) {
   onChangeTexts();
 }
 
-  
-  // Fancybox.bind('[data-fancybox="gallery"]', {
-  //   // Your custom options for a specific gallery
-  // });
-  
+
+// Fancybox.bind('[data-fancybox="gallery"]', {
+//   // Your custom options for a specific gallery
+// });
+
+function hello() {
+  const th = document.getElementById("clampText")
+  th.classList.toggle("fullText");
+
+  // Проверяем, имеет ли элемент класс fullText
+  if (th.classList.contains("fullText")) {
+    // Если да, удаляем стили, ограничивающие текст
+    th.style.display = "";
+    th.style.webkitBoxOrient = "";
+    th.style.webkitLineClamp = "";
+    th.style.overflow = "";
+  } else {
+    // Если нет, возвращаем ограничивающие стили
+    th.style.display = "-webkit-box";
+    th.style.webkitBoxOrient = "vertical";
+    th.style.webkitLineClamp = "3";
+    th.style.overflow = "hidden";
+  }
+  console.log('hello');
+}

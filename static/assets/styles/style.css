@@ -27,20 +27,87 @@
     scroll-behavior: smooth;
   }
 }
-#min_size_val,#max_price_val,#min_floor_val,#max_floor_val,#min_price_val,#max_size_val{
+.fullText {
+  display: block;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Ограничивает текст тремя строками */
+  overflow: hidden;
+}
+.block1024 {
+  display: none !important;
+}
+
+.FlatsFlexBoxPArent div {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  align-items: center;
+  color: #000;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+  /* 150% */
+}
+
+.FlatsFlexBoxPArent div .flat-cell,
+.FlatsFlexBoxPArent div .flat-cell__blocked {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 25px;
+}
+
+.FlatsFlexBoxPArent div .flat-cell__blocked {
+  width: 24px;
+
+  border-radius: 5px;
+  border: 1px solid #dadada;
+  padding: 4px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.FlatsFlexBoxPArent .flat-cell {
+  background-color: #b37d68;
+  border: none;
+  color: #fff;
+  height: 25px;
+  border-radius: 5px;
+  margin-right: 0 !important;
+  padding-top: 2px;
+  text-align: center;
+  width: 25px;
+}
+
+#min_size_val,
+#max_price_val,
+#min_floor_val,
+#max_floor_val,
+#min_price_val,
+#max_size_val {
   display: none;
 }
-a{
+
+a {
   cursor: pointer;
 }
+
 .FlatsFlexBoxPArent div {
   height: 28px;
   display: flex;
- gap: 7px;
-  
+  gap: 7px;
+
   align-items: center;
   color: #000;
-  
+
   font-family: Inter;
   font-size: 10px;
   font-style: normal;
@@ -64,7 +131,7 @@ a{
   border-radius: 5px;
   border: 1px solid #dadada;
   padding: 4px;
-  
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -159,6 +226,11 @@ a{
   height: 10rem;
   background: #4dc7a0;
   padding: 1rem;
+}
+
+.flat2 {
+  background-color: #dadada !important;
+  color: #000 !important;
 }
 
 .owl-theme .owl-nav {
@@ -309,7 +381,8 @@ a{
   align-items: center;
   gap: 10px;
 }
-.mobileHught60px{
+
+.mobileHught60px {
   display: none;
 }
 
@@ -493,7 +566,24 @@ a{
   line-height: normal;
   text-transform: lowercase;
 }
+.limited {
+  max-height: 4.5em; /* Примерная высота трех строк текста, зависит от размера шрифта */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out; /* Добавляем плавность изменения высоты */
+}
+#clampText{
+  cursor: pointer;
+}
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
 
+.fullText {
+  display: block;
+}
 /* ======pridetable end ====== */
 .projekts {
   padding-top: 100px;
@@ -1088,6 +1178,11 @@ a.slide_btn {
   bottom: 0px;
 }
 
+
+.block1024 {
+  display: none;
+}
+
 /* ====== */
 .aboutFlat h1 {
   color: #000;
@@ -1430,11 +1525,17 @@ a {
   border: none;
 }
 
+.sosial {
+  display: flex;
+  gap: 10px;
+}
+
 .footer {
   background: #242424;
   padding: 50px;
   padding-bottom: 20px;
   display: flex;
+  gap: 3rem;
   justify-content: space-between;
 }
 
@@ -1996,6 +2097,7 @@ a {
 }
 
 .select-box__current {
+  height: 50px !important;
   width: 100%;
   position: relative;
   border: 1px solid #ccc;
@@ -2954,11 +3056,30 @@ option:hover {
   height: 25px;
 }
 
-.flat-cell__blocked {
+.flat3 {
+  color: #000 !important;
+  position: relative;
+}
+
+.flat4 {
+  color: #000 !important;
+}
+
+.radio {
+  position: absolute;
+  top: -7px;
+  right: -3px;
   border-radius: 5px;
-  border: 1px solid #dadada;
+  background-color: #b37d68;
+  width: 7px;
+  height: 7px !important;
+}
+
+.flat-cell__blocked {
+  border-radius: 5px !important;
+  border: 1px solid #dadada !important;
   padding: 4px;
-  background-image: url(https://nurzaman.vercel.app/static/media/block.b5a7f0bc1020f85a235f.svg);
+  background-image: url(https://nurzaman.vercel.app/static/media/block.b5a7f0bc1020f85a235f.svg) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -3796,6 +3917,14 @@ input {
     gap: 50px;
   }
 
+  .block1024 {
+    display: block !important;
+  }
+
+  .none1024 {
+    display: none;
+  }
+
   .formSection p {
     width: 100%;
   }
@@ -4126,6 +4255,10 @@ input {
 }
 
 @media (max-width: 640px) {
+  .wrap640 {
+    flex-wrap: wrap;
+  }
+
   .swiper-container3 {
     width: 100%;
     margin-right: 0
