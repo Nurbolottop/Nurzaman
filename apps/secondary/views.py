@@ -69,6 +69,8 @@ def genPlaning(request):
     block_data_9 = Block.objects.get(number=9)
     block_data_10 = Block.objects.get(number=10)
     block_data_11 = Block.objects.get(number=11)
+    block_data_12 = Block.objects.get(number=12)
+    
 
     blocks = Block.objects.annotate(
         apartments_count=Count('floor__floor_form')  # Используем related_name 'floor_form' в модели Apartment
@@ -196,6 +198,8 @@ def genplaning_detail(request, apartment_id):
     block_data_9 = Block.objects.get(number=9)
     block_data_10 = Block.objects.get(number=10)
     block_data_11 = Block.objects.get(number=11)
+    block_data_12 = Block.objects.get(number=12)
+    
 
     #contacts
     contactinfo = ContactInfo.objects.latest('id')

@@ -92,7 +92,7 @@
         <p style="color: black">Меню</p>
       </div>
       <div class="logo">
-        <a href="./index.html">
+        <a href="./{% url 'index' %}">
           <img class="logo_img" src="{{settings.logo_complex.url}}" alt="" />
         </a>
       </div>
@@ -648,6 +648,11 @@
   <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script src="{% static 'assets/js/script.js' %}"></script>
+  <script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      // Your custom options for a specific gallery
+    });
+  </script>
 </body>
 
 </html>
