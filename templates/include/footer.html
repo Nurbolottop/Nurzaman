@@ -1,6 +1,6 @@
 {% load static %}
 <footer class="footer block1024">
-  <div class="wrap640"  style="display: flex; justify-content: space-between">
+  <div class="wrap640" style="display: flex; justify-content: space-between">
     <div class="leftFooter">
       <img src="{% static 'assets/svg/Mask group.svg' %}" alt="" />
     </div>
@@ -61,7 +61,7 @@
   <br />
   <br />
   <br />
-  <div class="wrap640"  style="display: flex; justify-content: space-between">
+  <div class="wrap640" style="display: flex; justify-content: space-between">
     <div class="footerCenter">
       <div>
         <h1>Адрес</h1>
@@ -123,13 +123,15 @@
         type="text"
       />
       <div class="checkboxx">
-        <input type="checkbox" name="consent2" />
-        <p>Я согласен на обработку Персональных данных</p>
+        <input type="checkbox" name="checkbox" id="checkbox_id" value="value" />
+        <label for="checkbox_id">
+          Я согласен на обработку Персональных данных</label
+        >
       </div>
       <button name="call2" class="footerButton">Отправить</button>
     </form>
-    <div style="justify-content: end;" class="footerRight">
-      <div style="display: flex; gap:10px;    align-items: center;" class="sosial">
+    <div style="justify-content: end" class="footerRight">
+      <div style="display: flex; gap: 10px; align-items: center" class="sosial">
         {% if settings.whatsapp_number%}
         <img
           onclick="callPhoneNumber('{{settings.phone}}')"
@@ -174,8 +176,10 @@
       type="text"
     />
     <div class="checkboxx">
-      <input type="checkbox" name="consent2" />
-      <p>Я согласен на обработку Персональных данных</p>
+      <input type="checkbox" name="checkbox" id="checkbox_id" value="value" />
+      <label for="checkbox_id">
+        Я согласен на обработку Персональных данных</label
+      >
     </div>
     <button name="call2" class="footerButton">Отправить</button>
   </form>
@@ -295,14 +299,14 @@
     </div>
     <div class="writeUs">
       <p><u>Политика конфиденциальности</u></p>
-      {% comment %} <p>
+      <p>
         <u
           >Разработка
           <a href="https://instagram.com/codex_kg/" style="color: white"
             >Codex KG</a
           ></u
         >
-      </p> {% endcomment %}
+      </p>
     </div>
   </div>
 </footer>
@@ -354,10 +358,10 @@
 
       <br />
       <div>
-        <input type="checkbox" name="" id="call" />
-        <label for="call" style="cursor: pointer"
-          >Я согласен с политикой конфиденциальности</label
-        >
+        <input type="checkbox" name="checkbox" id="checkbox_id" value="value" />
+        <label for="checkbox_id">
+          Я согласен на обработку Персональных данных
+        </label>
       </div>
       <br /><br />
       <button>Отправить</button>
