@@ -103,6 +103,19 @@ class Floor(models.Model):
     class Meta:
         verbose_name = "Добавить Этаж"
         verbose_name_plural = "Добавить Этажи"
+class Osob(models.Model):
+    title = models.CharField(
+        max_length = 255,
+        verbose_name = "Название особенности"
+    )
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Добавить Особенность"
+        verbose_name_plural = "Добавить Особенности"
+
 
 class Apartment(models.Model):
     category = models.ForeignKey(
@@ -240,22 +253,10 @@ class Apartment(models.Model):
 
 ################################################################################################################################################################################
 
-class Osob(models.Model):
-    title = models.CharField(
-        max_length = 255,
-        verbose_name = "Название особенности"
-    )
-    
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = "Добавить Особенность"
-        verbose_name_plural = "Добавить Особенности"
 
 class ApartmentOsob(models.Model):
     settings = models.ForeignKey(Apartment, related_name='apartmentosob', on_delete=models.CASCADE)
-    title = models.ForeignKey(Osob,related_name = "osob",on_delete = models.CASCADE)
+    title = models.ForeignKey(Category,related_name = "osob",on_delete = models.CASCADE)
     
     class Meta:
         unique_together = ('settings', 'title')
