@@ -254,53 +254,52 @@
         <div class="glassCardd2">
           <h1>Блок № {{ block_data_1.number }}</h1>
           <p>Дата сдачи: {{ block_data_1.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 9</p>
-
+          <p>Количество квартир: {{block_data_1.apartments_count}}</p>
         </div>
         <div class="glassCardd3">
           <h1>Блок № {{ block_data_3.number }}</h1>
           <p>Дата сдачи: {{ block_data_3.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 9</p>
+          <p>Количество квартир: {{block_data_3.apartments_count}}</p>
         </div>
         <div class="glassCardd4">
           <h1>Блок № {{ block_data_10.number }}</h1>
           <p>Дата сдачи: {{ block_data_10.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_10.apartments_count}}</p>
         </div>
         <div class="glassCardd5">
           <h1>Блок № {{ block_data_11.number }}</h1>
           <p>Дата сдачи: {{ block_data_11.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_11.apartments_count}}</p>
         </div>
         <div class="glassCardd6">
-          <h1>Блок № {{ block_data_12.number }}</h1>
+          <h1>Блок № {{ block_data_2.number }}</h1>
           <p>Дата сдачи: {{ block_data_2.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_2.apartments_count}}</p>
         </div>
         <div class="glassCardd7">
           <h1>Блок № {{ block_data_8.number }}</h1>
           <p>Дата сдачи: {{ block_data_8.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 8</p>
+          <p>Количество квартир: {{block_data_8.apartments_count}}</p>
         </div>
         <div class="glassCardd8">
           <h1>Блок № {{ block_data_4.number }}</h1>
           <p>Дата сдачи: {{ block_data_4.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_4.apartments_count}}</p>
         </div>
         <div class="glassCardd9">
           <h1>Блок № {{ block_data_5.number }}</h1>
           <p>Дата сдачи: {{ block_data_5.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_5.apartments_count}}</p>
         </div>
         <div class="glassCardd10">
           <h1>Блок № {{ block_data_6.number }}</h1>
           <p>Дата сдачи: {{ block_data_6.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_6.apartments_count}}</p>
         </div>
         <div class="glassCardd11">
           <h1>Блок № {{ block_data_7.number }}</h1>
           <p>Дата сдачи: {{ block_data_7.date|date:"d.m.Y" }}</p>
-          <p>Количество квартир: 14</p>
+          <p>Количество квартир: {{block_data_7.apartments_count}}</p>
         </div>
       </div>
 
@@ -408,7 +407,8 @@
           <div class="select-box__current" tabindex="1">
             <div class="select-box__value">
               {% for block in blocks %}
-              <input class="select-box__input"
+              <input
+                class="select-box__input"
                 type="radio"
                 id="block_{{ block.number }}"
                 value="{{ block.number }}"
