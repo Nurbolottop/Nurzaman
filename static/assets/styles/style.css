@@ -27,6 +27,7 @@
     scroll-behavior: smooth;
   }
 }
+
 .fullText {
   display: block;
 }
@@ -34,9 +35,11 @@
 .clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Ограничивает текст тремя строками */
+  -webkit-line-clamp: 3;
+  /* Ограничивает текст тремя строками */
   overflow: hidden;
 }
+
 .block1024 {
   display: none !important;
 }
@@ -437,12 +440,18 @@ a {
 }
 
 .shools {
-  display: flex;
+  margin: 0 auto;
+  display: grid !important;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0rem;
+  row-gap: 3rem;
+  /* display: flex;
   flex-wrap: wrap;
   row-gap: 2rem;
   flex-direction: row !important;
   width: 70%;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .shools ul {
@@ -491,7 +500,7 @@ a {
   font-style: normal;
   font-weight: 400;
   margin-top: 0px !important;
-  width: fit-content !important;
+  width: 65% !important;
   /* 23.518px */
 }
 
@@ -566,14 +575,19 @@ a {
   line-height: normal;
   text-transform: lowercase;
 }
+
 .limited {
-  max-height: 4.5em; /* Примерная высота трех строк текста, зависит от размера шрифта */
+  max-height: 4.5em;
+  /* Примерная высота трех строк текста, зависит от размера шрифта */
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out; /* Добавляем плавность изменения высоты */
+  transition: max-height 0.3s ease-in-out;
+  /* Добавляем плавность изменения высоты */
 }
-#clampText{
+
+#clampText {
   cursor: pointer;
 }
+
 .clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -584,6 +598,7 @@ a {
 .fullText {
   display: block;
 }
+
 /* ======pridetable end ====== */
 .projekts {
   padding-top: 100px;
@@ -1663,11 +1678,11 @@ a {
 .main {
   max-width: 1300px;
   padding: 0 27px;
-  margin: 5rem auto 0rem;
+  margin: 0rem auto 0rem;
 }
 
 .main h1 {
-  margin: 20px 0;
+  margin:  0;
   color: #000;
   font-family: Forum;
   font-size: 48px;
