@@ -2279,6 +2279,10 @@ a {
   background: #fff;
   padding: 30px;
   width: 100%;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .flatListCard:hover {
@@ -2408,8 +2412,12 @@ a {
   line-height: 19px;
   /* 158.333% */
 }
+label{
+  cursor: pointer;
+}
 
 .flatMetka {
+  width: fit-content;
   color: #fff;
   font-family: Arial;
   font-size: 10px;
