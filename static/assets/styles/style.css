@@ -363,7 +363,7 @@ a {
 }
 
 .headerFoot h1 {
-  width: 60%;
+  
   color: #fff;
   font-family: Forum;
   font-size: 64px;
@@ -443,7 +443,7 @@ a {
   margin: 0 auto;
   display: grid !important;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 0rem;
   row-gap: 3rem;
   /* display: flex;
@@ -1694,6 +1694,7 @@ a {
 }
 
 .sliderLink {
+  cursor: pointer;
   display: flex;
   align-items: center;
 }
@@ -2279,7 +2280,7 @@ a {
   background: #fff;
   padding: 30px;
   width: 100%;
-  height: 650px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2312,6 +2313,7 @@ a {
 
 .cardFlatImage img {
   width: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
