@@ -190,7 +190,7 @@
       <main class="main">
        
         <p class="bredCrumps">
-          Главная - Каталог квартир -
+         <a style="color:black" href="/"> Главная<a/> <a style="color:black" href=""> - Каталог квартир -<a/>
           <u style="color: black; text-decoration: none">
             {{apartment.room}} квартира {{apartment.razmer}} м²</u
           >
@@ -465,14 +465,14 @@
               </div>
               <div>
                 <h1>Тип планировок</h1>
-                <h2>{{apartment.layot_text}}</h2>
+                <h2>{{apartment.layout_text}}</h2>
               </div>
             </div>
 
             <div class="filtersINMoreZone flexGrow2">
               <h1>Особенности</h1>
               <div class="FilterListINmore">
-                {% for apartment in apartment.choise_image.all%}
+                {% for apartment in apartment.apartmentosob.all%}
                 <div class="moreZoneFilterItem">{{apartment.title}}</div>
                 {% endfor %}
               </div>
