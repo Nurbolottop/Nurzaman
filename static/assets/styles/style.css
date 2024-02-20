@@ -32,6 +32,10 @@
   display: block;
 }
 
+.scrollBar::-webkit-scrollbar {
+  display: none !important;
+}
+
 .clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -443,15 +447,9 @@ a {
   margin: 0 auto;
   display: grid !important;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 0rem;
   row-gap: 3rem;
-  /* display: flex;
-  flex-wrap: wrap;
-  row-gap: 2rem;
-  flex-direction: row !important;
-  width: 70%;
-  justify-content: space-between; */
 }
 
 .shools ul {

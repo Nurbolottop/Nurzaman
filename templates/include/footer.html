@@ -4,7 +4,7 @@
     <div class="leftFooter">
       <img src="{% static 'assets/svg/Mask group.svg' %}" alt="" />
     </div>
-    <a href="{{settings.whatsapp}}">
+    <a target="_blank"  href="{{settings.whatsapp}}">
       <div class="writeUs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@
       <div>
         <h1>Подписаться</h1>
         {% for settings in settings.settings_soc.all %}
-        <a href="{{settings.url}}">
+        <a target="_blank"  href="{{settings.url}}">
           <p>{{settings.title}} - {{settings.username}}</p>
         </a>
         {% endfor %}
@@ -139,11 +139,11 @@
           alt=""
         />
         {% endif %} {% if settings.whatsapp%}
-        <a href="{{settings.whatsapp}}">
+        <a target="_blank"  href="{{settings.whatsapp}}">
           <img src="{% static 'assets/img/Group 6.svg' %}" alt="" />
         </a>
         {% endif %} {% if settings.instagram%}
-        <a href="settings.instagram">
+        <a target="_blank"  href="settings.instagram">
           <img src="{% static 'assets/img/Group 5.svg' %}" alt="" />
         </a>
         {% endif %}
@@ -205,7 +205,7 @@
     <div>
       <h1>Подписаться</h1>
       {% for settings in settings.settings_soc.all %}
-      <a href="{{settings.url}}">
+      <a target="_blank"  href="{{settings.url}}">
         <p>{{settings.title}} - {{settings.username}}</p>
       </a>
       {% endfor %}
@@ -217,7 +217,7 @@
     </div>
   </div>
   <div class="footerRight">
-    <a href="{{settings.whatsapp}}">
+    <a target="_blank"  href="{{settings.whatsapp}}">
       <div class="writeUs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -278,11 +278,11 @@
         alt=""
       />
       {% endif %} {% if settings.whatsapp%}
-      <a href="{{settings.whatsapp}}">
+      <a target="_blank"  href="{{settings.whatsapp}}">
         <img src="{% static 'assets/img/Group 6.svg' %}" alt="" />
       </a>
       {% endif %} {% if settings.instagram%}
-      <a href="settings.instagram">
+      <a target="_blank"  href="settings.instagram">
         <img src="{% static 'assets/img/Group 5.svg' %}" alt="" />
       </a>
       {% endif %}
@@ -302,7 +302,7 @@
       {% comment %} <p>
         <u
           >Разработка
-          <a href="https://instagram.com/codex_kg/" style="color: white"
+          <a target="_blank"  href="https://instagram.com/codex_kg/" style="color: white"
             >Codex KG</a
           ></u
         >

@@ -536,7 +536,7 @@
         <div class="swiper-slide">
           <div class="sliderItem">
             <div class="envirement-slider">
-              <img src="{% static 'assets/img/newImage/!15.jpg' %}" alt="" />
+              <img src="{{environment.image.url}}" alt="" />
             </div>
             <div class="sliderItemRight">
               <div class="prideHead mobileShools" style="
@@ -549,7 +549,7 @@
 
 
                     <h1 class="textWrapnone" style="display: flex; justify-content: space-between">
-                      {{environment.title|safe}}
+                      Школы и <br>университеты
                     </h1>
     
                     <div style="display: flex">

@@ -190,7 +190,7 @@
       <main class="main">
        
         <p class="bredCrumps">
-         <a style="color:black" href="/"> Главная<a/> <a style="color:black" href=""> - Каталог квартир -<a/>
+         <a style="color:black" href="{% url 'index' %}"> Главная<a/> <a style="color:black" href="{% url 'catalog' %}"> - Каталог квартир -<a/>
           <u style="color: black; text-decoration: none">
             {{apartment.room}} квартира {{apartment.razmer}} м²</u
           >
@@ -403,7 +403,7 @@
             <div class="moreZoneRight flexGrow1">
               <div class="moreZoneRightHeader">
                 <p>Цена</p>
-                <h1><span id="price">{{apartment.price}}</span> с</h1>
+                <h1><span id="price">{{apartment.price}}</span> $</h1>
                 <button style="width: fit-content" class="flatMetka">
                   дом сдан
                 </button>
@@ -443,7 +443,7 @@
                     fill="white"
                   />
                 </h1>
-                <h3>от <span class="monthly">54 535</span> с/мес.</h3>
+                <h3>от <span class="monthly">54 535</span> $/мес.</h3>
 
                 <div
                   style="cursor: pointer"
@@ -594,7 +594,7 @@
                   </div>
                   <div class="cardFlatInf">
                     <p>Стоимость:</p>
-                    <h1>{{apartment.price}} с</h1>
+                    <h1>{{apartment.price}} $</h1>
                   </div>
                   <br />
                   <div class="cardFootFlat">
@@ -617,8 +617,8 @@
                       </h1>
                     </div>
                     <div>
-                      <h2>от 80 453 с/мес.</h2>
-                      <h3>от 54 535 с/мес.</h3>
+                      <h2>от 80 453 $/мес.</h2>
+                      <h3>от 54 535 $/мес.</h3>
                     </div>
                   </div>
                 </div>
@@ -646,7 +646,7 @@
       <div class="modalContainer"></div>
       <div class="modal1">
         <div class="madalHead">
-          <h1>Задать вопрос</h1>
+          <h1>Задать вопро$</h1>
 
           <svg
             id="faqModalClose"
@@ -797,14 +797,14 @@
               <p>{{apartment.info}}</p>
             </h1>
             <br />
-            <h2><span class="price">10 776 135</span> сом</h2>
+            <h2><span class="price">10 776 135</span> $</h2>
           </div>
           <br />
           <div class="payMant">
             <div class="payMantLeft">
               <h1>Стандартный платеж</h1>
               <br />
-              <h2>от <span class="standartMonthly">89 192</span> сом/мес</h2>
+              <h2>от <span class="standartMonthly">89 192</span> $/ме$</h2>
             </div>
             <div class="payMantRight">
               <h3>
@@ -824,12 +824,12 @@
                 </svg>
               </h3>
               <br />
-              <div>от <span class="monthly">66 903</span> сом/мес</div>
+              <div>от <span class="monthly">66 903</span> $/ме$</div>
             </div>
           </div>
           <br />
           <div class="calkulateSlider">
-            <h1>Ваш первоначальный взнос</h1>
+            <h1>Ваш первоначальный взно$</h1>
             <br />
             <div class="planning_range">
               <div class="range-slider">
@@ -962,17 +962,17 @@
         <br />
         <div class="modalInf">
           <h1>Стоимость квартиры</h1>
-          <h2><span class="price">10 776 135</span> сом</h2>
+          <h2><span class="price">10 776 135</span> $</h2>
         </div>
         <br />
         <div class="modalInf">
-          <h1>Ваш первоначальный взнос</h1>
-          <h2><span class="paymentFirst">10 776 135</span> сом</h2>
+          <h1>Ваш первоначальный взно$</h1>
+          <h2><span class="paymentFirst">10 776 135</span> $</h2>
         </div>
         <br />
         <div class="modalInf">
           <h1>Ваш платеж</h1>
-          <h3><span class="monthly">66 903</span> сом/мес</h3>
+          <h3><span class="monthly">66 903</span> $/ме$</h3>
         </div>
         <br /><br /><br />
         <form class="modalForm">

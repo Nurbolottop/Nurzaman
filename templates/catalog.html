@@ -161,13 +161,13 @@
           </div>
           <!-- Слайдер для стоимости -->
           <div>
-            <h2>Стоимость, в сомах</h2>
+            <h2>Стоимость, в долларах</h2>
             <br /><br />
             <div class="range-slider">
-              <input type="range" id="min_price" name="min_price" min="1" max="10000000" value="1" class="range-slider__input" />
-              <input type="range" id="max_price" name="max_price" min="1" max="10000000" value="10000000" class="range-slider__input" />
+              <input type="range" id="min_price" name="min_price" min="1" max="1000000" value="1" class="range-slider__input" />
+              <input type="range" id="max_price" name="max_price" min="1" max="1000000" value="1000000" class="range-slider__input" />
               <div id="price_display" class="range-slider__display">
-                 <span id="min_price_val"></span> <span id="max_price_val">10000000</span>
+                 <span id="min_price_val"></span> <span id="max_price_val">1000000</span>
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@
               <ul class="select-box__list">
                 {% for features in features %}
                 <li>
-                  <a style="color:black" href="{% url 'catalog' %}?ban={{ features.id }}" class="select-box__option" for="0" aria-hidden="aria-hidden">{{features.title}}</a>
+                  <a style="color:black !important" href="{% url 'catalog' %}?ban={{ features.id }}" class="select-box__option" for="0" aria-hidden="aria-hidden">{{features.title}}</a>
                 </li>
                 {% endfor %}
               </ul>
@@ -283,8 +283,8 @@
                 <h1>Ваш платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle — копия.svg' %}" alt="" /></h1>
               </div>
               <div>
-                <h2>от 80 453 с/мес.</h2>
-                <h3>от 54 535 с/мес.</h3>
+                <h2>от 80 453 $/мес.</h2>
+                <h3>от 54 535 $/мес.</h3>
               </div>
             </div>
           </div>
@@ -362,7 +362,7 @@
                         </div>
                         <div class="cardFlatInf">
                             <p>Стоимость:</p>
-                            <h1>${apartment.price} с</h1>
+                            <h1>${apartment.price} $</h1>
                         </div>
                         <br />
                         <div class="cardFootFlat">
@@ -371,8 +371,8 @@
                                 <h1>Ваш платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle — копия.svg' %}" alt="" /></h1>
                             </div>
                             <div>
-                                <h2>от 80 453 с/мес.</h2>
-                                <h3>от 54 535 с/мес.</h3>
+                                <h2>от 80 453 $/мес.</h2>
+                                <h3>от 54 535 $/мес.</h3>
                             </div>
                         </div>
                     </div>
