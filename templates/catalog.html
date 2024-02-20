@@ -164,10 +164,10 @@
             <h2>Стоимость, в долларах</h2>
             <br /><br />
             <div class="range-slider">
-              <input type="range" id="min_price" name="min_price" min="1" max="1000000" value="1" class="range-slider__input" />
-              <input type="range" id="max_price" name="max_price" min="1" max="1000000" value="1000000" class="range-slider__input" />
+              <input type="range" id="min_price" name="min_price" min="1" max="100000" value="1" class="range-slider__input" />
+              <input type="range" id="max_price" name="max_price" min="1" max="100000" value="100000" class="range-slider__input" />
               <div id="price_display" class="range-slider__display">
-                 <span id="min_price_val"></span> <span id="max_price_val">1000000</span>
+                 <span id="min_price_val"></span> <span id="max_price_val">100000</span>
               </div>
             </div>
           </div>
@@ -177,10 +177,10 @@
             <h2>Площадь, м2</h2>
             <br /><br />
             <div class="range-slider">
-              <input type="range" id="min_size" name="min_size" min="0" max="200" value="1" class="range-slider__input" />
-              <input type="range" id="max_size" name="max_size" min="0" max="200" value="200" class="range-slider__input" />
+              <input type="range" id="min_size" name="min_size" min="0" max="150" value="1" class="range-slider__input" />
+              <input type="range" id="max_size" name="max_size" min="0" max="150" value="150" class="range-slider__input" />
               <div id="size_display" class="range-slider__display" >
-                 <span style='oposity:0' id="min_size_val">1</span> <span style='opacity: 0;display:none'id="max_size_val">200</span>
+                 <span style='oposity:0' id="min_size_val">1</span> <span style='opacity: 0;display:none'id="max_size_val">150</span>
               </div>
             </div>
           </div>
@@ -190,10 +190,10 @@
             <h2>Этаж</h2>
             <br /><br />
             <div class="range-slider">
-              <input type="range" id="min_floor" name="min_floor" min="0" max="110" value="0" class="range-slider__input" />
-              <input type="range" id="max_floor" name="max_floor" min="0" max="110" value="110" class="range-slider__input" />
+              <input type="range" id="min_floor" name="min_floor" min="1" max="14" value="1" class="range-slider__input" />
+              <input type="range" id="max_floor" name="max_floor" min="1" max="14" value="14" class="range-slider__input" />
               <div id="floor_display" class="range-slider__display">
-                 <span id="min_floor_val">0</span>  <span id="max_floor_val">110</span>
+                 <span id="min_floor_val">1</span>  <span id="max_floor_val">14</span>
               </div>
             </div>
           </div>
@@ -274,7 +274,7 @@
             </div>
             <div class="cardFlatInf">
               <p>Стоимость:</p>
-              <h1>{{apartment.price}} с</h1>
+              <h1>{{apartment.price}} $</h1>
             </div>
             <br />
             <div class="cardFootFlat">
