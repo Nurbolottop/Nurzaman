@@ -272,17 +272,19 @@
     </a>
     <div class="sosial">
       {% if settings.whatsapp_number%}
-      <img
-        onclick="callPhoneNumber('{{settings.phone}}')"
-        src="{% static 'assets/img/Group 4.svg' %}"
-        alt=""
-      />
+      <a target="_blank" href="{{settings.whatsapp}}">
+        <img
+          onclick="callPhoneNumber('{{settings.phone}}')"
+          src="{% static 'assets/img/Group 4.svg' %}"
+          alt=""
+        />
+      </a>
       {% endif %} {% if settings.whatsapp%}
-      <a href="{{settings.whatsapp}}">
+      <a target="_blank" href="{{settings.whatsapp}}">
         <img src="{% static 'assets/img/Group 6.svg' %}" alt="" />
       </a>
       {% endif %} {% if settings.instagram%}
-      <a href="settings.instagram">
+      <a target="_blank" href="settings.instagram">
         <img src="{% static 'assets/img/Group 5.svg' %}" alt="" />
       </a>
       {% endif %}
