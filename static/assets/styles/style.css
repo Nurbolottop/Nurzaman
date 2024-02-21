@@ -451,6 +451,11 @@ a {
   column-gap: 0rem;
   row-gap: 3rem;
 }
+.moreZoneLeftImageContainerFooter a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
 .shools ul {
   list-style: none;

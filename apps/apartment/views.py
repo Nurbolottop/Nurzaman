@@ -13,6 +13,9 @@ def catalog(request):
 #base
     settings = Settings.objects.latest("id")
     apartments = models.Apartment.objects.all()
+#Пагинация
+
+
 
 # фильтрация квартир по категории
     categories = models.Category.objects.all()
@@ -49,21 +52,42 @@ def catalog(request):
            
             )
             apartment_count = apartments.count()
-            apartments_data = list(apartments.values(
-            'id', 
-            'category__title', 
-            'info',
-            'room__title', 
-            'status__title', 
-            'razmer', 
-            'price',
-            'layote',  
-            'floor__title'
+            
+            page = request.GET.get('page', 1)
+            paginator = Paginator(apartments, 4)  # 4 квартиры на страницу
+
+            try:
+                apartments = paginator.page(page)
+            except PageNotAnInteger:
+                apartments = paginator.page(1)
+            except EmptyPage:
+                apartments = paginator.page(paginator.num_pages)
+
+            # Формируем данные для каждой квартиры
+            apartments_data = list(apartments.object_list.values(
+                'id', 
+                'category__title', 
+                'info',
+                'room__title', 
+                'status__title', 
+                'razmer', 
+                'price',
+                'layote',  
+                'floor__title'
             ))
-            print(request.GET)
+
             for apt in apartments_data:
                 apt['layote_url'] = apt['layote'] and getattr(models.Apartment.objects.get(pk=apt['id']).layote, 'url', '')
-            return JsonResponse({'results': apartments_data,'apartment_count': apartment_count}, safe=False)
+            print(f"Page: {page}, Showing apartments: {len(apartments_data)}")
+            # Возвращаем данные в JSON-формате
+            return JsonResponse({
+                'results': apartments_data,
+                'apartment_count': paginator.count,
+                'has_next': apartments.has_next(),
+                'has_previous': apartments.has_previous(),
+                'next_page_number': apartments.next_page_number() if apartments.has_next() else None,
+                'previous_page_number': apartments.previous_page_number() if apartments.has_previous() else None,
+            }, safe=False)
         else:
             return JsonResponse({'error': search_form.errors}, status=400)
 

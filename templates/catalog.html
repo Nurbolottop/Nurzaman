@@ -253,62 +253,13 @@
         </div>
       </div>
       <div class="flatList">
-        {% for apartment in apartments %}
-        <a href="{% url 'planing' apartment.id %}">
-          <div class="flatListCard">
-            <div class="cardHead">
-              <h1>{{apartment.room}} квартира {{apartment.razmer}} м²</h1>
-              <p>{{apartment.info}}</p>
-            </div>
-            {% if apartment.status%}
-            <button class="flatMetka">{{apartment.status}}</button>
-            {% endif %}
-            <br />
-            <div class="cardFlatImage">
-              <img src="{{apartment.layote.url}}" style="max-width:350px;" alt="" />
-            </div>
-            <br />
-            <div class="cardFlatInf">
-              <p>Этаж:</p>
-              <h2>{{apartment.floor}} </h2>
-            </div>
-            <div class="cardFlatInf">
-              <p>Стоимость:</p>
-              <h1>{{apartment.price}} $</h1>
-            </div>
-            <br />
-            <div class="cardFootFlat">
-              <div>
-                <h1>Стандартный платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle.svg' %}" alt="" /></h1>
-                <h1>Ваш платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle — копия.svg' %}" alt="" /></h1>
-              </div>
-              <div>
-                <h2>от 80 453 $/мес.</h2>
-                <h3>от 54 535 $/мес.</h3>
-              </div>
-            </div>
-          </div>
-        </a>
-        {% endfor %}
+        <!-- Сюда будут вставлены элементы квартир через AJAX -->
       </div>
+      
     </div>
-    {% if apartments.has_next %}
-        <div class="moreFlatCard">
-            <a href="?page={{ apartments.next_page_number }}">Посмотреть еще квартиры</a>
-        </div>
-    {% endif %}
-
-    <br /><br />
-    <div class="h100"></div>
-    {% include 'include/contact_form.html'%}
-
-    <br /><br /><br /><br />
-    <div class="h100"></div>
-    {% include "include/footer.html" %}
-
-    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'assets/js/script.js' %}"></script>
-    <!-- Остальной HTML -->
+    <div class="moreFlatCard">
+      <a id="loadMore" style="color: black; border-bottom: 1px dashed black">Посмотреть еще квартиры</a>
+    </div>
     <script>
       // Функция для получения значения CSRF-токена из cookies
       function getCSRFToken() {
@@ -338,10 +289,14 @@
       }
   
       // Функция для обновления списка квартир на странице
-      function updateApartmentList(apartmentsData) {
+      let currentPage = 1; // Текущая страница для пагинации
+
+      // Функция для обновления списка квартир на странице с возможностью добавления новых элементов
+      function updateApartmentList(apartmentsData, append = false) {
         const flatList = document.querySelector('.flatList');
-        flatList.innerHTML = ''; // Очистить текущий список
-    
+        if (!append) {
+          flatList.innerHTML = ''; // Очистить список, если не добавляем новые элементы
+        }
         apartmentsData.forEach(apartment => {
             const apartmentElement = `
                 <a href="/planing/${apartment.id}">
@@ -383,51 +338,76 @@
       }
       
   
-      // Функция для отправки AJAX-запроса
-      function sendFilterRequest() {
-          const csrftoken = getCSRFToken(); // Получение CSRF-токена
-          const minPrice = document.getElementById('min_price').value;
-          const maxPrice = document.getElementById('max_price').value;
-          const minSize = document.getElementById('min_size').value;
-          const maxSize = document.getElementById('max_size').value;
-          const minFloor = document.getElementById('min_floor').value;
-          const maxFloor = document.getElementById('max_floor').value;
-          
-          // Отправка AJAX-запроса на сервер
-          $.ajax({
-              url: '/catalog/', // URL, который обрабатывает ваш запрос на стороне сервера
-              type: 'GET', 
-              data: {
-                  'min_price': minPrice,
-                  'max_price': maxPrice,
-                  'min_size': minSize,
-                  'max_size': maxSize,
-                  'min_floor': minFloor,
-                  'max_floor': maxFloor
-              },
-              success: function (response) {
-                  // Обновление списка квартир на странице
-                  $('.ahahha').text('Мы подобрали для вас квартир: ' + response.apartment_count);
-                  updateApartmentList(response.results);
-              },
-              error: function (xhr, status, error) {
-                  console.error('AJAX Error:', error);
-              }
-          });
+      function sendFilterRequest(loadMore = false) {
+        const csrftoken = getCSRFToken(); // Получение CSRF-токена
+        const minPrice = document.getElementById('min_price').value;
+        const maxPrice = document.getElementById('max_price').value;
+        const minSize = document.getElementById('min_size').value;
+        const maxSize = document.getElementById('max_size').value;
+        const minFloor = document.getElementById('min_floor').value;
+        const maxFloor = document.getElementById('max_floor').value;
+    
+        $.ajax({
+          url: '/catalog/',
+          type: 'GET',
+          data: {
+            'min_price': minPrice,
+            'max_price': maxPrice,
+            'min_size': minSize,
+            'max_size': maxSize,
+            'min_floor': minFloor,
+            'max_floor': maxFloor,
+            'page': currentPage // Добавляем номер текущей страницы к запросу
+          },
+          success: function (response) {
+            $('.ahahha').text('Мы подобрали для вас квартир: ' + response.apartment_count);
+            updateApartmentList(response.results, loadMore); // Используем флаг loadMore для добавления квартир
+          },
+          error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+          }
+        });
       }
-  
+
+      function loadMoreApartments() {
+        currentPage++; // Увеличиваем номер страницы
+        sendFilterRequest(true); // Отправляем запрос с целью добавления квартир
+      }
+      // Обработчик события клика для кнопки "Посмотреть еще квартиры"
+      document.getElementById('loadMore').addEventListener('click', function(event) {
+        event.preventDefault();
+        loadMoreApartments();
+        updateSliderDisplay(); // Первоначальное обновление значений слайдеров
+        sendFilterRequest();
+      });
       // Обработчики событий для слайдеров
       document.addEventListener('DOMContentLoaded', function() {
-          let sliders = document.querySelectorAll('.range-slider__input');
-          sliders.forEach(function(input) {
-              input.addEventListener('input', function() {
-                  updateSliderDisplay();
-                  sendFilterRequest();
-              });
-          });
-          updateSliderDisplay(); // Первоначальное обновление значений слайдеров
+        updateSliderDisplay(); // Первоначальное обновление значений слайдеров
+        sendFilterRequest(); // Вызов функции для загрузки квартир при загрузке страницы
+        
+        let sliders = document.querySelectorAll('.range-slider__input');
+        sliders.forEach(function(input) {
+            input.addEventListener('input', function() {
+                updateSliderDisplay();
+                sendFilterRequest(); // Вызов функции при изменении слайдера
+            });
+        });
       });
+    
     </script>
+    
+    <br /><br />
+    <div class="h100"></div>
+    {% include 'include/contact_form.html'%}
+
+    <br /><br /><br /><br />
+    <div class="h100"></div>
+    {% include "include/footer.html" %}
+
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <!-- Остальной HTML -->
+
     
       
   </body>
