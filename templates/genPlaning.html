@@ -807,24 +807,22 @@
           <div class="moreFloors flexGrow1" id="floorsInfo">
             <div>
               <h1>Этажи</h1>
-              <h2>{{apartment.floor}} из 12</h2>
+              <h2>1 из 12</h2>
             </div>
             <div>
               <h1>Ввод в эксплуатацию</h1>
-              <h2>{{apartment.exploitation}}</h2>
+              <h2>II кв. 2024</h2>
             </div>
             <div>
               <h1>Тип планировок</h1>
-              <h2>{{apartment.layout_text}}</h2>
+              <h2>2-А</h2>
             </div>
           </div>
 
           <div class="filtersINMoreZone flexGrow2">
             <h1>Особенности</h1>
             <div class="FilterListINmore">
-              {% for apartment in apartment.choise_image.all%}
-              <div class="moreZoneFilterItem">{{apartment.title}}</div>
-              {% endfor %}
+              <div class="moreZoneFilterItem">Квартиры с 1 лоджией</div>
             </div>
           </div>
           <button
