@@ -55,7 +55,7 @@ admin.site.register(models.ContactInfo, ContactInfoFilterAdmin)
 admin.site.register(models.Settings, SettingsFilterAdmin)
 admin.site.register(models.About, AboutFilterAdmin)
 admin.site.register(models.Gallery, GalleryFilterAdmin)
-
+admin.site.register(models.Day)
 ################################################################################################################################################################################
 
 admin.site.unregister(User)

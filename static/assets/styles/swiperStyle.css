@@ -323,9 +323,7 @@
     left: auto
 }
 
-.swiper-button-lock {
-    display: none
-}
+
 
 .swiper-button-next:after,
 .swiper-button-prev:after {

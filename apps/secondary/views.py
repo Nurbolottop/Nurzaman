@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from apps.contacts.models import Contact
-from apps.base.models import Settings,ContactInfo
+from apps.base.models import Settings,ContactInfo,Day
 from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 from apps.telegram_bot.views import get_text
@@ -57,7 +57,7 @@ def genPlaning(request):
     # Собираете данные как раньше
     settings = Settings.objects.latest("id")
     floors = Floor.objects.all().order_by('block', 'title')
-
+    day = Day.objects.latest("id")
     block_data_1 = Block.objects.get(number=1)  # Здесь предполагается, что 'number' это уникальный идентификатор блока
     block_data_2 = Block.objects.get(number=2)  # Здесь предполагается, что 'number' это уникальный идентификатор блока
     block_data_3 = Block.objects.get(number=3)  # Здесь предполагается, что 'number' это уникальный идентификатор блока
@@ -182,6 +182,7 @@ emai: {email}
 
 def genplaning_detail(request, apartment_id):
     blocks = Block.objects.all()
+    day = Day.objects.latest("id")
     apartment = get_object_or_404(Apartment, id=apartment_id)
     # Собираете данные как раньше
     settings = Settings.objects.latest("id")

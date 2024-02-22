@@ -659,3 +659,13 @@ function setupPathClicks() {
 
 // Вызываем функцию после загрузки страницы
 document.addEventListener('DOMContentLoaded', setupPathClicks);
+
+document.getElementById('onDay').addEventListener('click', () => {
+  document.getElementById('dayPLaning').style.display = 'block';
+  document.getElementById('NightPLaning').style.display = 'none';
+})
+
+document.getElementById('onHight').addEventListener('click', () => {
+  document.getElementById('NightPLaning').style.display = 'block';
+  document.getElementById('dayPLaning').style.display = 'none';
+})

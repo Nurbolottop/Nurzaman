@@ -182,3 +182,24 @@ class ContactInfo(models.Model):
         verbose_name_plural = "Страница контакты"
 
 ################################################################################################################################################################################
+
+
+class Day(models.Model):
+    day = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='day/',
+        verbose_name="Фотография дня",
+        blank = True, null = True
+    )
+    night = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='day/',
+        verbose_name="Фотография ночи",
+        blank = True, null = True
+    )
+    
+    class Meta:
+        verbose_name = "День и ночь"
+        verbose_name_plural = "День и ночь"
