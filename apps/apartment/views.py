@@ -26,10 +26,10 @@ def catalog(request):
 
 # фильтрация квартир по комнатам
     rooms = models.Rooms.objects.all()
-    rooms_id = request.GET.get("room")
+    room_id = request.GET.get("room")
 
-    if rooms_id:
-        apartments = apartments.filter(room_id=rooms_id)
+    if room_id:
+        apartments = apartments.filter(room__id=room_id)  
 
     features = models.Osob.objects.all()
     feature_id = request.GET.get('Ben')  # Получаем ID выбранной особенности из запроса

@@ -102,7 +102,7 @@
     <div class="headerFoot">
       <h1>{{slide.title}}</h1>
       <div class="socialMedia">
-        <img class="modals" data-modal="callModal" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
+        <img onclick="callPhoneNumber('{{settings.phone}}')" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
         <a href="https://api.whatsapp.com/send/?phone=996778777744&text&type=phone_number&app_absent=0">
           <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
         </a>

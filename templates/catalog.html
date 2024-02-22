@@ -107,7 +107,7 @@
           <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
         </div> {% endcomment %}
         <div class="socialMedia">
-          <img class="modals" data-modal="callModal" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
+          <img onclick="callPhoneNumber('{{settings.phone}}')" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
           <a href="https://api.whatsapp.com/send/?phone=996778777744&text&type=phone_number&app_absent=0">
             <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
           </a>
@@ -155,10 +155,10 @@
           <div>
             <h2>Количество комнат</h2>
             {% for room in rooms %}
-              <a style='color:black' href="{% url 'catalog' %}?room={{ room.id }}" class="roomButton">{{ room.id }}</a>
+              <a style='color:black' href="#" data-room-id="{{ room.id }}" class="roomButton">{{ room.id }}</a> <!-- Используем data атрибут -->
             {% endfor %}
-
           </div>
+        
           <!-- Слайдер для стоимости -->
           <div>
             <h2>Стоимость, в долларах</h2>
@@ -261,85 +261,80 @@
       <a id="loadMore" style="color: black; border-bottom: 1px dashed black">Посмотреть еще квартиры</a>
     </div>
     <script>
-      // Функция для получения значения CSRF-токена из cookies
       function getCSRFToken() {
-          const name = 'csrftoken';
-          let cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-              const cookies = document.cookie.split(';');
-              for (let i = 0; i < cookies.length; i++) {
-                  const cookie = cookies[i].trim();
-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                      break;
-                  }
-              }
-          }
-          return cookieValue;
+        const name = 'csrftoken';
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
       }
-  
-      // Функция для обновления отображаемых значений слайдеров
+    
       function updateSliderDisplay() {
-          document.getElementById('min_price_val').textContent = document.getElementById('min_price').value;
-          document.getElementById('max_price_val').textContent = document.getElementById('max_price').value;
-          document.getElementById('min_size_val').textContent = document.getElementById('min_size').value;
-          document.getElementById('max_size_val').textContent = document.getElementById('max_size').value;
-          document.getElementById('min_floor_val').textContent = document.getElementById('min_floor').value;
-          document.getElementById('max_floor_val').textContent = document.getElementById('max_floor').value;
+        document.getElementById('min_price_val').textContent = document.getElementById('min_price').value;
+        document.getElementById('max_price_val').textContent = document.getElementById('max_price').value;
+        document.getElementById('min_size_val').textContent = document.getElementById('min_size').value;
+        document.getElementById('max_size_val').textContent = document.getElementById('max_size').value;
+        document.getElementById('min_floor_val').textContent = document.getElementById('min_floor').value;
+        document.getElementById('max_floor_val').textContent = document.getElementById('max_floor').value;
       }
-  
-      // Функция для обновления списка квартир на странице
-      let currentPage = 1; // Текущая страница для пагинации
-
-      // Функция для обновления списка квартир на странице с возможностью добавления новых элементов
+    
+      let currentPage = 1;
+    
       function updateApartmentList(apartmentsData, append = false) {
         const flatList = document.querySelector('.flatList');
         if (!append) {
-          flatList.innerHTML = ''; // Очистить список, если не добавляем новые элементы
+          flatList.innerHTML = '';
         }
         apartmentsData.forEach(apartment => {
-            const apartmentElement = `
-                <a href="/planing/${apartment.id}">
-                    <div class="flatListCard">
-                        <div class="cardHead">
-                            <h1>${apartment.room__title} квартира ${apartment.razmer} м²</h1>
-                            <p>${apartment.info || ''}</p>
-                        </div>
-                        ${apartment.status__title ? `<button class="flatMetka">${apartment.status__title}</button>` : ''}
-                        <br />
-                        <div class="cardFlatImage">
-                            <img src="${apartment.layote_url || ''}" style="max-width:350px;" alt="" />
-                        </div>
-                        <br />
-                        <div class="cardFlatInf">
-                            <p>Этаж:</p>
-                            <h2>${apartment.floor__title || ''} из 14</h2>
-                        </div>
-                        <div class="cardFlatInf">
-                            <p>Стоимость:</p>
-                            <h1>${apartment.price} $</h1>
-                        </div>
-                        <br />
-                        <div class="cardFootFlat">
-                            <div>
-                                <h1>Стандартный платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle.svg' %}" alt="" /></h1>
-                                <h1>Ваш платеж <img width="14px" src="{% static 'assets/svg/div.tooltip-circle — копия.svg' %}" alt="" /></h1>
-                            </div>
-                            <div>
-                                <h2>от 80 453 $/мес.</h2>
-                                <h3>от 54 535 $/мес.</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            `;
-            flatList.insertAdjacentHTML('beforeend', apartmentElement);
-          });
+          const apartmentElement = `
+              <a href="/planing/${apartment.id}">
+                  <div class="flatListCard">
+                      <div class="cardHead">
+                          <h1>${apartment.room__title} квартира ${apartment.razmer} м²</h1>
+                          <p>${apartment.info || ''}</p>
+                      </div>
+                      ${apartment.status__title ? `<button class="flatMetka">${apartment.status__title}</button>` : ''}
+                      <br />
+                      <div class="cardFlatImage">
+                          <img src="${apartment.layote_url || ''}" style="max-width:350px;" alt="" />
+                      </div>
+                      <br />
+                      <div class="cardFlatInf">
+                          <p>Этаж:</p>
+                          <h2>${apartment.floor__title || ''} из 14</h2>
+                      </div>
+                      <div class="cardFlatInf">
+                          <p>Стоимость:</p>
+                          <h1>${apartment.price} $</h1>
+                      </div>
+                      <br />
+                      <div class="cardFootFlat">
+                          <div>
+                              <h1>Стандартный платеж <img width="14px" src="/path/to/image" alt="" /></h1>
+                              <h1>Ваш платеж <img width="14px" src="/path/to/another/image" alt="" /></h1>
+                          </div>
+                          <div>
+                              <h2>от 80 453 $/мес.</h2>
+                              <h3>от 54 535 $/мес.</h3>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          `;
+          flatList.insertAdjacentHTML('beforeend', apartmentElement);
+        });
       }
-      
-  
-      function sendFilterRequest(loadMore = false) {
-        const csrftoken = getCSRFToken(); // Получение CSRF-токена
+    
+      function sendFilterRequest(loadMore = false, roomId = '') {
+        const csrftoken = getCSRFToken();
         const minPrice = document.getElementById('min_price').value;
         const maxPrice = document.getElementById('max_price').value;
         const minSize = document.getElementById('min_size').value;
@@ -357,42 +352,53 @@
             'max_size': maxSize,
             'min_floor': minFloor,
             'max_floor': maxFloor,
-            'page': currentPage // Добавляем номер текущей страницы к запросу
+            'room': roomId, // Добавляем ID комнаты в запрос, если он доступен
+            'page': currentPage
           },
           success: function (response) {
             $('.ahahha').text('Мы подобрали для вас квартир: ' + response.apartment_count);
-            updateApartmentList(response.results, loadMore); // Используем флаг loadMore для добавления квартир
+            updateApartmentList(response.results, loadMore);
           },
           error: function (xhr, status, error) {
             console.error('AJAX Error:', error);
           }
         });
       }
-
-      function loadMoreApartments() {
-        currentPage++; // Увеличиваем номер страницы
-        sendFilterRequest(true); // Отправляем запрос с целью добавления квартир
-    }
     
-    document.getElementById('loadMore').addEventListener('click', function(event) {
+      function loadMoreApartments() {
+        currentPage++;
+        sendFilterRequest(true);
+      }
+    
+      document.getElementById('loadMore').addEventListener('click', function(event) {
         event.preventDefault();
         loadMoreApartments();
-    });
-      // Обработчики событий для слайдеров
+      });
+    
       document.addEventListener('DOMContentLoaded', function() {
-        updateSliderDisplay(); // Первоначальное обновление значений слайдеров
-        sendFilterRequest(); // Вызов функции для загрузки квартир при загрузке страницы
-        
+        updateSliderDisplay();
+        sendFilterRequest();
+    
         let sliders = document.querySelectorAll('.range-slider__input');
         sliders.forEach(function(input) {
             input.addEventListener('input', function() {
                 updateSliderDisplay();
-                sendFilterRequest(); // Вызов функции при изменении слайдера
+                sendFilterRequest();
+            });
+        });
+    
+        // Добавление обработчика кликов по кнопкам комнат
+        document.querySelectorAll('.roomButton').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const roomId = this.getAttribute('data-room-id');
+                sendFilterRequest(false, roomId);
             });
         });
       });
-    
     </script>
+    
+    
     
     <br /><br />
     <div class="h100"></div>

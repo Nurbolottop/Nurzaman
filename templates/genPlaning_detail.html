@@ -172,7 +172,7 @@
 
       <div>
         <div class="socialMedia">
-          <img class="modals" data-modal="callModal" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
+          <img onclick="callPhoneNumber('{{settings.phone}}')" src="{% static 'assets/svg/Group 4.svg' %}" alt="" />
           <a href="https://api.whatsapp.com/send/?phone=996778777744&text&type=phone_number&app_absent=0">
             <img src="{% static 'assets/svg/Group 6.svg' %}" alt="" />
           </a>
@@ -806,14 +806,14 @@
             </div>
             <div>
               <h1>Тип планировок</h1>
-              <h2>{{apartment.layot_text}}</h2>
+              <h2>{{apartment.layout_text}}</h2>
             </div>
           </div>
 
           <div class="filtersINMoreZone flexGrow2">
             <h1>Особенности</h1>
             <div class="FilterListINmore">
-              {% for apartment in apartment.choise_image.all%}
+              {% for apartment in apartment.apartmentosob.all%}
               <div class="moreZoneFilterItem">{{apartment.title}}</div>
               {% endfor %}
             </div>
