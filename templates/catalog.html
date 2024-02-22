@@ -372,14 +372,12 @@
       function loadMoreApartments() {
         currentPage++; // Увеличиваем номер страницы
         sendFilterRequest(true); // Отправляем запрос с целью добавления квартир
-      }
-      // Обработчик события клика для кнопки "Посмотреть еще квартиры"
-      document.getElementById('loadMore').addEventListener('click', function(event) {
+    }
+    
+    document.getElementById('loadMore').addEventListener('click', function(event) {
         event.preventDefault();
         loadMoreApartments();
-        updateSliderDisplay(); // Первоначальное обновление значений слайдеров
-        sendFilterRequest();
-      });
+    });
       // Обработчики событий для слайдеров
       document.addEventListener('DOMContentLoaded', function() {
         updateSliderDisplay(); // Первоначальное обновление значений слайдеров

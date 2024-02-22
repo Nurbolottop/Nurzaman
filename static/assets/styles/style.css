@@ -44,6 +44,11 @@
   overflow: hidden;
 }
 
+#loadMore {
+  font-family: Gilroy;
+  opacity: 0.6;
+}
+
 .block1024 {
   display: none !important;
 }
@@ -451,6 +456,7 @@ a {
   column-gap: 0rem;
   row-gap: 3rem;
 }
+
 .moreZoneLeftImageContainerFooter a {
   display: flex;
   gap: 10px;
@@ -1685,7 +1691,7 @@ a {
 }
 
 .main h1 {
-  margin:  0;
+  margin: 0;
   color: #000;
   font-family: Forum;
   font-size: 48px;
@@ -2415,7 +2421,8 @@ a {
   line-height: 19px;
   /* 158.333% */
 }
-label{
+
+label {
   cursor: pointer;
 }
 
@@ -2446,10 +2453,12 @@ label{
   line-height: 16px;
   /* 145.455% */
 }
-.bredCrumps a{
-  color:black
+
+.bredCrumps a {
+  color: black
 }
- u {
+
+u {
   text-decoration: none;
 }
 

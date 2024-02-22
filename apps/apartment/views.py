@@ -254,3 +254,4 @@ emai: {email}
 Коментарий: <b>{message}</b>""")
                 return redirect('index')
     return render(request, 'planing.html', locals())
+

@@ -577,3 +577,85 @@ function hello() {
   }
   console.log('hello');
 }
+
+
+const blockInputs = document.querySelectorAll(".select-box__input");
+const flatsContainer = document.getElementById("flats-container");
+
+
+function GetBlook(id) {
+  fetch("/ajax/get_floors_and_apartments/?block_number=" + id)
+    .then((response) => response.json())
+    .then((data) => {
+      flatsContainer.innerHTML = ""; // Очищаем предыдущие данные
+      flatsContainer.className = "FlatsFlexBoxPArent";
+      // Здесь ваш код для добавления новых данных в flatsContainer
+      // Например:
+      data.floors.forEach((floor) => {
+        const floorDiv = document.createElement("div");
+
+        floorDiv.innerHTML = `${floor.floor_title} Этаж`;
+        flatsContainer.appendChild(floorDiv);
+
+        const apartmentsList = data.apartments.filter(
+          (apartment) =>
+            apartment.block == id &&
+            apartment.floor == floor.floor_title
+        );
+        console.log(apartmentsList);
+        apartmentsList.forEach((apartment) => {
+          const apartmentDiv = document.createElement("a");
+          apartmentDiv.href = `/genplaning_detail/${apartment.apartment_id}/`;
+          apartmentDiv.className = "flat-cell";
+          apartmentDiv.innerHTML = ` ${apartment.block}: ${apartment.floor}`;
+
+          if (apartment.status === 1) {
+            apartmentDiv.innerHTML = "";
+            apartmentDiv.className = "flat-cell__blocked flat1";
+          } else if (apartment.status === 2) {
+            apartmentDiv.className =
+              "floorItemINGenPlanMINCardBron flat2";
+          }
+          if (apartment.status === 3) {
+            apartmentDiv.className =
+              "floorItemINGenPlanMINCardBron flat3";
+            apartmentDiv.innerHTML += '<div class="radio"></div>';
+          }
+          if (apartment.status === 4) {
+            apartmentDiv.className =
+              "floorItemINGenPlanMINCardBron flat4";
+          }
+          floorDiv.appendChild(apartmentDiv);
+        });
+      });
+    })
+    .catch((error) => {
+      console.error("Ошибка:", error);
+    });
+}
+// Функция для добавления обработчика событий к каждому path
+function setupPathClicks() {
+  // Итерация по всем path элементам
+  document.querySelectorAll('svg path').forEach(function (path) {
+    path.addEventListener('click', function () {
+      // Получаем номер блока из ID path
+      const blockNumber = this.id.replace('path_block_', '');
+      // Находим соответствующий radio кнопку и активируем её
+      const radioButton = document.getElementById('block_' + blockNumber);
+      if (radioButton) {
+        radioButton.checked = true;
+      }
+
+      GetBlook(blockNumber)
+      // Прокрутка на высоту одного экрана вниз
+      window.scrollBy({
+        top: window.innerHeight + 200, // Высота одного полного экрана
+        left: 0, // Без горизонтальной прокрутки
+        behavior: 'smooth' // Плавная прокрутка
+      });
+    });
+  });
+}
+
+// Вызываем функцию после загрузки страницы
+document.addEventListener('DOMContentLoaded', setupPathClicks);
