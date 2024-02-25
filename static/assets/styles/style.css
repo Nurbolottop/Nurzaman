@@ -43,7 +43,11 @@
 .block1024 {
   display: none !important;
 }
-
+.moreZoneLeftImageContainerFooter a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .FlatsFlexBoxPArent div {
   display: flex;
   justify-content: space-between;
