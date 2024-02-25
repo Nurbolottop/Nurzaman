@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+  
   }
 
   if (pathElement1 && glassCardElement1) {
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement1.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+
   }
   if (pathElement2 && glassCardElement2) {
     pathElement2.addEventListener('mouseenter', () => {
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement2.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+ 
   }
   if (pathElement3 && glassCardElement3) {
     pathElement3.addEventListener('mouseenter', () => {
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement3.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+   
   }
   if (pathElement4 && glassCardElement4) {
     pathElement4.addEventListener('mouseenter', () => {
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement4.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+
   }
   if (pathElement5 && glassCardElement5) {
     pathElement5.addEventListener('mouseenter', () => {
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement5.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+  
   }
   if (pathElement7 && glassCardElement7) {
     pathElement7.addEventListener('mouseenter', () => {
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement7.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+   
   }
   if (pathElement8 && glassCardElement8) {
     pathElement8.addEventListener('mouseenter', () => {
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement8.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+    
   }
   if (pathElement9 && glassCardElement9) {
     pathElement9.addEventListener('mouseenter', () => {
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement9.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+ 
   }
   if (pathElement6 && glassCardElement6) {
     pathElement6.addEventListener('mouseenter', () => {
@@ -352,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement6.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+
   }
 
   if (pathElement10 && glassCardElement10) {
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
       glassCardElement10.style.display = 'none';
     });
   } else {
-    console.error('Элементы не найдены. Проверьте правильность классов и структуры HTML.');
+
   }
 });
 
@@ -452,7 +452,7 @@ if (modalsOpenButtons.length) {
       navbar.style.zIndex = 1;
       document.body.style.overflow = 'hidden';
     };
-    console.log(closeModalId, modalsOpenButtons)
+  
     closeModalId.addEventListener('click', onClose);
     currentModal.children[0].addEventListener('click', onClose);
     el.onclick = onOpenModal;
@@ -575,7 +575,7 @@ function hello() {
     th.style.webkitLineClamp = "3";
     th.style.overflow = "hidden";
   }
-  console.log('hello');
+ 
 }
 
 
@@ -602,7 +602,7 @@ function GetBlook(id) {
             apartment.block == id &&
             apartment.floor == floor.floor_title
         );
-        console.log(apartmentsList);
+     
         apartmentsList.forEach((apartment) => {
           const apartmentDiv = document.createElement("a");
           apartmentDiv.href = `/genplaning_detail/${apartment.apartment_id}/`;
@@ -630,7 +630,7 @@ function GetBlook(id) {
       });
     })
     .catch((error) => {
-      console.error("Ошибка:", error);
+      
     });
 }
 // Функция для добавления обработчика событий к каждому path

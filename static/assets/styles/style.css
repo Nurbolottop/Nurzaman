@@ -15,6 +15,13 @@
   src: url(../fonts/gilroy/Gilroy-ExtraBold.otf);
   font-weight: bold;
 }
+.bugovan .range-slider__display::before {
+  --pos: var(--range-slider-value-low);
+  content: attr(data-low);
+  bottom: 100%;
+  translate: -8px -100%;
+  left: var(--range-slider-value-low-fallback);
+}
 
 * {
   padding: 0;
@@ -43,11 +50,7 @@
 .block1024 {
   display: none !important;
 }
-.moreZoneLeftImageContainerFooter a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+
 .FlatsFlexBoxPArent div {
   display: flex;
   justify-content: space-between;
@@ -3993,8 +3996,9 @@ input {
   }
 
   .headerFoot h1 {
-    font-size: 29px !important;
+    font-size: 50px !important;
   }
+
 
   .dots {
     transform: translateY(0);
